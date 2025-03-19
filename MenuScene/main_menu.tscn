@@ -1,0 +1,40 @@
+[gd_scene load_steps=3 format=3 uid="uid://bn8ewy7mohhq3"]
+
+[ext_resource type="Texture2D" uid="uid://bud2by61p65cf" path="res://MenuScene/assets/360_F_269284892_uHwDKiFqJ98GbFRCnR6iWBRdqg4mA0Tu.webp" id="1_vu15n"]
+[ext_resource type="FontFile" uid="uid://sbpac0644867" path="res://font/Roboto/Roboto-VariableFont_wdth,wght.ttf" id="2_rx3jl"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 1150.0
+offset_bottom = 645.0
+texture = ExtResource("1_vu15n")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 298.0
+offset_top = 54.0
+offset_right = 870.0
+offset_bottom = 191.0
+theme_override_font_sizes/font_size = 100
+text = "DoomzDayz"
+
+[node name="ButtonCont" type="VBoxContainer" parent="."]
+offset_left = 458.0
+offset_top = 306.0
+offset_right = 498.0
+offset_bottom = 354.0
+scale = Vector2(5.84555, 3.49967)
+
+[node name="Start" type="Button" parent="ButtonCont"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_rx3jl")
+theme_override_font_sizes/font_size = 10
+text = "Start"
+
+[node name="Quit" type="Button" parent="ButtonCont"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_rx3jl")
+theme_override_font_sizes/font_size = 10
+text = "Quit"
