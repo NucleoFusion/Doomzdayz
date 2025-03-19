@@ -117,8 +117,8 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_kmkkr"]
-radius = 37.855
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1vsi4"]
+size = Vector2(71, 48.5)
 
 [node name="Player" type="Node2D"]
 
@@ -138,6 +138,7 @@ position = Vector2(0, -9.85507)
 scale = Vector2(0.297297, 0.289855)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
-shape = SubResource("CircleShape2D_kmkkr")
+position = Vector2(-1, 3)
+shape = SubResource("RectangleShape2D_1vsi4")
 
 [connection signal="timeout" from="CharacterBody2D/ShootTimer" to="CharacterBody2D" method="_on_shoot_timeout"]

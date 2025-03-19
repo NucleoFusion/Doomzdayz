@@ -6,8 +6,6 @@ extends CharacterBody2D
 @onready var _sprite = get_node("Sprite2D")
 
 func _ready() -> void:
-	# global_position = global_position/2
-	
 	_sprite.rotation = direction.angle()
 
 # Called when the node enters the scene tree for the first time.

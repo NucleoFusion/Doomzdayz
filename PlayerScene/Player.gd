@@ -1,5 +1,11 @@
 extends CharacterBody2D
 
+enum {
+	MENU,
+	ALIVE,
+	DEAD,
+}
+
 @export var speed = 200
 @export var _bulletScene: PackedScene
 
@@ -11,11 +17,7 @@ var _currAngle = Vector2.ZERO.angle()
 var _shotCooldown = false
 
 func _ready() -> void:
-	
 	global_position = Vector2(583,292)
-
-
-	
 
 func _physics_process(delta: float) -> void:
 	handleMovement()
