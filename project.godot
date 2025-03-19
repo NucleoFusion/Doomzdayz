@@ -11,7 +11,8 @@ config_version=5
 [application]
 
 config/name="Doomzdayz"
-config/features=PackedStringArray("4.3", "Mobile")
+run/main_scene="uid://bn8ewy7mohhq3"
+config/features=PackedStringArray("4.4", "Mobile")
 config/icon="res://icon.svg"
 
 [dotnet]
