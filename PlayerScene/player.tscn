@@ -1,7 +1,8 @@
-[gd_scene load_steps=20 format=3 uid="uid://brnermo6y7owo"]
+[gd_scene load_steps=21 format=3 uid="uid://brnermo6y7owo"]
 
-[ext_resource type="Script" uid="uid://b801qp2r508np" path="res://PlayerScene/character_body_2d.gd" id="1_2qdwb"]
+[ext_resource type="Script" path="res://PlayerScene/Player.gd" id="1_2qdwb"]
 [ext_resource type="Texture2D" uid="uid://eqvnk27jb7gc" path="res://PlayerScene/assets/Pickup Icon - Engines - Burst Engine.png" id="1_vgxth"]
+[ext_resource type="PackedScene" uid="uid://c8yrn2nvntbwa" path="res://BulletScene/bullet.tscn" id="2_0gbni"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_v644h"]
 atlas = ExtResource("1_vgxth")
@@ -123,10 +124,20 @@ radius = 37.855
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 script = ExtResource("1_2qdwb")
+_bulletScene = ExtResource("2_0gbni")
+
+[node name="ShootTimer" type="Timer" parent="CharacterBody2D"]
+wait_time = 0.5
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
 scale = Vector2(3.36364, 3.45)
 sprite_frames = SubResource("SpriteFrames_1dgtk")
 
+[node name="BulletSpawn" type="Marker2D" parent="CharacterBody2D/AnimatedSprite2D"]
+position = Vector2(0, -9.85507)
+scale = Vector2(0.297297, 0.289855)
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
 shape = SubResource("CircleShape2D_kmkkr")
+
+[connection signal="timeout" from="CharacterBody2D/ShootTimer" to="CharacterBody2D" method="_on_shoot_timeout"]
