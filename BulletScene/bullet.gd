@@ -7,6 +7,7 @@ extends CharacterBody2D
 
 func _ready() -> void:
 	_sprite.rotation = direction.angle()
+	add_to_group("bullets")
 
 # Called when the node enters the scene tree for the first time.
 func _physics_process(delta: float) -> void:

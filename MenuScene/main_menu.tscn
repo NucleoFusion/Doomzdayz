@@ -26,20 +26,20 @@ text = "DoomzDayz"
 
 [node name="ButtonCont" type="VBoxContainer" parent="."]
 layout_mode = 0
-offset_left = 458.0
-offset_top = 306.0
-offset_right = 498.0
-offset_bottom = 354.0
-scale = Vector2(5.84555, 3.49967)
+offset_left = 495.0
+offset_top = 354.0
+offset_right = 589.0
+offset_bottom = 470.0
+scale = Vector2(1.70241, 1.08466)
 
 [node name="Start" type="Button" parent="ButtonCont"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_rx3jl")
-theme_override_font_sizes/font_size = 10
+theme_override_font_sizes/font_size = 40
 text = "Start"
 
 [node name="Quit" type="Button" parent="ButtonCont"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_rx3jl")
-theme_override_font_sizes/font_size = 10
+theme_override_font_sizes/font_size = 40
 text = "Quit"

@@ -6,8 +6,9 @@ enum {
 	DEAD,
 }
 
-@export var speed = 200
+@export var speed = 400
 @export var _bulletScene: PackedScene
+@export var Lives = 3
 
 @onready var _sprite = get_node("AnimatedSprite2D")
 @onready var _shootTimer = get_node("ShootTimer")
@@ -17,7 +18,7 @@ var _currAngle = Vector2.ZERO.angle()
 var _shotCooldown = false
 
 func _ready() -> void:
-	global_position = Vector2(583,292)
+	add_to_group("player")
 
 func _physics_process(delta: float) -> void:
 	handleMovement()
@@ -40,10 +41,10 @@ func handleMovement():
 		_currAngle -= deg_to_rad(3)
 
 	if Input.is_action_pressed("move_up"):
-		velocity.y -= 2
+		velocity.y -= 1
 
 	if Input.is_action_pressed("move_down"):
-		velocity.y += 2
+		velocity.y += 1
 
 	velocity = velocity.rotated(_currAngle)
 	velocity = velocity * speed
