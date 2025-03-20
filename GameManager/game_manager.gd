@@ -1,8 +1,8 @@
 extends Node
 
-@export var _level = 0
-@export var _score = 0
-@export var _highScore = 0
+@export var Level = 0
+@export var Score = 0
+@export var HighScore = 0
 
 @onready var _scoreLabel
 @onready var _highScoreLabel
@@ -18,6 +18,9 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	_scoreLabel.text = "Score: " + str(_score)
-	_highScoreLabel.text = "High Score: " + str(_highScore)
+	if Score >= HighScore:
+		HighScore = Score
+	
+	_scoreLabel.text = "Score: " + str(Score)
+	_highScoreLabel.text = "High Score: " + str(HighScore)
 	_livesLabel.text = "Lives: " + str(_player.Lives)

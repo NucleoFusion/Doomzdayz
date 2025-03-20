@@ -3,6 +3,7 @@ extends CharacterBody2D
 @export var Lives = 1
 @export var Speed = 50
 @export var Damage = 100
+@export var Score = 100
 
 @onready var _player
 

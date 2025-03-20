@@ -21,6 +21,8 @@ shape = SubResource("RectangleShape2D_cufmx")
 [node name="Right" type="StaticBody2D" parent="."]
 position = Vector2(1200, -2)
 scale = Vector2(2.57723, 2.40877)
+collision_layer = 193
+collision_mask = 193
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Right"]
 position = Vector2(-9.31231, 134.509)
@@ -28,6 +30,8 @@ scale = Vector2(1.30162, 1)
 shape = SubResource("RectangleShape2D_cufmx")
 
 [node name="Up" type="StaticBody2D" parent="."]
+collision_layer = 193
+collision_mask = 193
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Up"]
 position = Vector2(576, -22)
@@ -35,6 +39,8 @@ shape = SubResource("RectangleShape2D_rvde2")
 
 [node name="Down" type="StaticBody2D" parent="."]
 position = Vector2(-1, 691)
+collision_layer = 193
+collision_mask = 193
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Down"]
 position = Vector2(576, -22)

@@ -20,12 +20,4 @@ position = Vector2(579, 328)
 
 [node name="GameManager" parent="." instance=ExtResource("2_jrhsd")]
 
-<<<<<<< HEAD
-[editable path="Player"]
-=======
-[node name="EnemyNormal" parent="." instance=ExtResource("4_e2ns8")]
-position = Vector2(130, 82)
-scale = Vector2(2.01111, 1.8)
-
 [node name="HUD" parent="." instance=ExtResource("5_wo00q")]
->>>>>>> ee202eb (adding HUD)
