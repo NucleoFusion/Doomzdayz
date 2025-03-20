@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://lhhtjnowqo7m"]
+[gd_scene load_steps=6 format=3 uid="uid://lhhtjnowqo7m"]
 
 [ext_resource type="PackedScene" uid="uid://brnermo6y7owo" path="res://PlayerScene/player.tscn" id="1_crkrh"]
 [ext_resource type="PackedScene" uid="uid://yeo5mx6jptiu" path="res://Levels/level_0.tscn" id="1_e2ns8"]
 [ext_resource type="PackedScene" uid="uid://dpsc7d4wh67rg" path="res://WorldBorder/world_border.tscn" id="1_pq6x3"]
 [ext_resource type="PackedScene" uid="uid://d05vuqwjt7lxa" path="res://GameManager/game_manager.tscn" id="2_jrhsd"]
+[ext_resource type="PackedScene" uid="uid://bxn5qnge21woh" path="res://HUD/hud.tscn" id="5_wo00q"]
 
 [node name="GameScene" type="Node2D"]
 
@@ -19,4 +20,12 @@ position = Vector2(579, 328)
 
 [node name="GameManager" parent="." instance=ExtResource("2_jrhsd")]
 
+<<<<<<< HEAD
 [editable path="Player"]
+=======
+[node name="EnemyNormal" parent="." instance=ExtResource("4_e2ns8")]
+position = Vector2(130, 82)
+scale = Vector2(2.01111, 1.8)
+
+[node name="HUD" parent="." instance=ExtResource("5_wo00q")]
+>>>>>>> ee202eb (adding HUD)
