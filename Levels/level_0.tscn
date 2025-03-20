@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://yeo5mx6jptiu"]
+
+[ext_resource type="Script" uid="uid://hf167y4ob8fl" path="res://Levels/level_0.gd" id="1_o6pxs"]
+[ext_resource type="PackedScene" uid="uid://je1f41sqlr2s" path="res://Enemy/Normal/enemy_normal.tscn" id="2_d3n4i"]
+
+[node name="Level0" type="Node2D"]
+position = Vector2(0, 1)
+script = ExtResource("1_o6pxs")
+EnemyNormal = ExtResource("2_d3n4i")
+
+[node name="SpawnTime" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
+
+[connection signal="timeout" from="SpawnTime" to="." method="_on_spawn_time_timeout"]
