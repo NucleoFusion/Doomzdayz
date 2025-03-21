@@ -6,7 +6,7 @@ extends Node2D
 
 
 func _ready():
-	_player = get_tree().current_scene.get_node_or_null("Player/CharacterBody2D")
+	_player = get_tree().current_scene.get_node_or_null("GameScene/Player/CharacterBody2D")
 	
 	for i in range(5):
 		create_enemy()

@@ -20,6 +20,10 @@ var _shotCooldown = false
 func _ready() -> void:
 	add_to_group("player")
 
+func _process(delta: float) -> void:
+	if Lives <= 0:
+		get_tree().current_scene.change_scene("death")
+
 func _physics_process(delta: float) -> void:
 	handleMovement()
 	_sprite.rotation = _currAngle

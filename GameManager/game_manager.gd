@@ -11,10 +11,10 @@ extends Node
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	_scoreLabel = get_tree().current_scene.get_node("HUD/Score")
-	_highScoreLabel = get_tree().current_scene.get_node("HUD/HighScore")
-	_livesLabel = get_tree().current_scene.get_node("HUD/Lives")
-	_player = get_tree().current_scene.get_node("Player/CharacterBody2D")
+	_scoreLabel = get_tree().current_scene.get_node("GameScene/HUD/Score")
+	_highScoreLabel = get_tree().current_scene.get_node("GameScene/HUD/HighScore")
+	_livesLabel = get_tree().current_scene.get_node("GameScene/HUD/Lives")
+	_player = get_tree().current_scene.get_node("GameScene/Player/CharacterBody2D")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

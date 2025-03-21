@@ -1,0 +1,12 @@
+[gd_scene load_steps=5 format=3 uid="uid://bwr3x02h6qi63"]
+
+[ext_resource type="Script" uid="uid://c40f0ue8j8lgy" path="res://SceneManager/scene_manager.gd" id="1_llndr"]
+[ext_resource type="PackedScene" uid="uid://bn8ewy7mohhq3" path="res://MenuScene/main_menu.tscn" id="2_ted37"]
+[ext_resource type="PackedScene" uid="uid://lhhtjnowqo7m" path="res://GameScene/game_scene.tscn" id="3_p2rpa"]
+[ext_resource type="PackedScene" uid="uid://cdgibl874uwe0" path="res://DeathScene/death_scene.tscn" id="4_p2rpa"]
+
+[node name="SceneManager" type="Node"]
+script = ExtResource("1_llndr")
+MenuScene = ExtResource("2_ted37")
+GameScene = ExtResource("3_p2rpa")
+DeathScene = ExtResource("4_p2rpa")

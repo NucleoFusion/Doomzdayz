@@ -29,7 +29,7 @@ script = ExtResource("1_2qdwb")
 _bulletScene = ExtResource("2_0gbni")
 
 [node name="ShootTimer" type="Timer" parent="CharacterBody2D"]
-wait_time = 0.5
+wait_time = 0.2
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
 position = Vector2(1, 15)

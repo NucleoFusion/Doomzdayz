@@ -1,0 +1,64 @@
+[gd_scene load_steps=4 format=3 uid="uid://cdgibl874uwe0"]
+
+[ext_resource type="Texture2D" uid="uid://bud2by61p65cf" path="res://MenuScene/assets/360_F_269284892_uHwDKiFqJ98GbFRCnR6iWBRdqg4mA0Tu.webp" id="1_crk0v"]
+[ext_resource type="Script" uid="uid://drp6281qk2p7b" path="res://DeathScene/death_scene.gd" id="1_dtu4y"]
+[ext_resource type="FontFile" uid="uid://sbpac0644867" path="res://font/Roboto/Roboto-VariableFont_wdth,wght.ttf" id="2_riyk3"]
+
+[node name="DeathScene" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1.0
+offset_right = 1.0
+script = ExtResource("1_dtu4y")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(2.23064, 1.79251)
+texture = ExtResource("1_crk0v")
+
+[node name="Title" type="Label" parent="."]
+offset_left = 316.0
+offset_top = 39.0
+offset_right = 839.0
+offset_bottom = 157.0
+theme_override_fonts/font = ExtResource("2_riyk3")
+theme_override_font_sizes/font_size = 100
+text = "Doomzdayz"
+
+[node name="Score" type="Label" parent="."]
+offset_left = 264.0
+offset_top = 293.0
+offset_right = 444.0
+offset_bottom = 353.0
+theme_override_fonts/font = ExtResource("2_riyk3")
+theme_override_font_sizes/font_size = 50
+text = "Score: 0"
+
+[node name="HighScore" type="Label" parent="."]
+offset_left = 590.0
+offset_top = 294.0
+offset_right = 886.0
+offset_bottom = 354.0
+theme_override_fonts/font = ExtResource("2_riyk3")
+theme_override_font_sizes/font_size = 50
+text = "High Score: 0"
+
+[node name="ButtonCont" type="VBoxContainer" parent="."]
+offset_left = 479.0
+offset_top = 411.0
+offset_right = 616.0
+offset_bottom = 527.0
+scale = Vector2(1.23313, 1.11861)
+
+[node name="Start" type="Button" parent="ButtonCont"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_riyk3")
+theme_override_font_sizes/font_size = 40
+text = "Restart"
+
+[node name="Quit" type="Button" parent="ButtonCont"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_riyk3")
+theme_override_font_sizes/font_size = 40
+text = "Quit"

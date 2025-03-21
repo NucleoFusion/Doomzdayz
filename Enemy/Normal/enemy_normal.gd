@@ -8,7 +8,7 @@ extends CharacterBody2D
 @onready var _player
 
 func _ready() -> void:
-	_player = get_tree().current_scene.get_node("Player/CharacterBody2D")
+	_player = get_tree().current_scene.get_node("GameScene/Player/CharacterBody2D")
 	add_to_group("enemies")
 
 func _process(delta: float) -> void:

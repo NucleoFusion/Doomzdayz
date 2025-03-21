@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@export var speed = 500
+@export var speed = 1000
 @export var direction = Vector2.ZERO
 
 @onready var _sprite = get_node("Sprite2D")
@@ -8,7 +8,7 @@ extends CharacterBody2D
 
 func _ready() -> void:
 	_sprite.rotation = direction.angle()
-	_gameManager = get_tree().current_scene.get_node("GameManager")
+	_gameManager = get_tree().current_scene.get_node("GameScene/GameManager")
 	add_to_group("bullets")
 
 # Called when the node enters the scene tree for the first time.
