@@ -4,7 +4,7 @@ extends CharacterBody2D
 @export var Speed = 50
 @export var Damage = 100
 @export var Score = 100
-
+@export var BulletScene : PackedScene
 
 @onready var _player
 
@@ -17,11 +17,7 @@ func _process(delta: float) -> void:
 		queue_free()
 
 func _physics_process(delta: float) -> void:
-	var playerPosition = _player.global_position
 	
-	var veloDirection = (playerPosition - global_position)
-	
-	velocity = veloDirection.normalized() * Speed
 	
 	var collision = move_and_collide(velocity * delta)
 	if collision:
@@ -34,8 +30,12 @@ func _physics_process(delta: float) -> void:
 			Lives -= 1
 			node.Lives -= 1
 
-
+func shoot_bullet():
+	var bullet = BulletScene.instantiate()
+	bullet.direction = _player.global_position
+	bullet.global_position = global_position + Vector2(200,200) 
+	get_tree().current_scene.add_child(bullet)
 	
-
-
 	
+func _on_timer_timeout() :
+	shoot_bullet()

@@ -1,0 +1,41 @@
+[gd_scene load_steps=7 format=3 uid="uid://bji8lb5u57e5u"]
+
+[ext_resource type="Script" uid="uid://ccyms63sic1a2" path="res://Enemy/EnemyShooting/enemy_shoot.gd" id="1_0g5a5"]
+[ext_resource type="PackedScene" uid="uid://c8yrn2nvntbwa" path="res://BulletScene/bullet.tscn" id="2_heu3o"]
+[ext_resource type="Texture2D" uid="uid://eqvnk27jb7gc" path="res://PlayerScene/assets/Pickup Icon - Engines - Burst Engine.png" id="2_ngniy"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_cjrp2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rkr1a"]
+atlas = ExtResource("2_ngniy")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xys26"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rkr1a")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="EnemyShooting" type="CharacterBody2D"]
+scale = Vector2(2.32569, 2.26058)
+collision_layer = 193
+collision_mask = 193
+script = ExtResource("1_0g5a5")
+BulletScene = ExtResource("2_heu3o")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_cjrp2")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_xys26")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
