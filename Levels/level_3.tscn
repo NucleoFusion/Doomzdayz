@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://c2bcicuaumr2h"]
+
+[node name="Level3" type="Node2D"]
+
+[node name="SpawnTimer" type="Timer" parent="."]
+wait_time = 1.5
+autostart = true
+
+[node name="Level_3Timer" type="Timer" parent="."]
+wait_time = 30.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="SpawnTimer" to="SpawnTimer" method="_on_timeout"]
+[connection signal="timeout" from="Level_3Timer" to="Level_3Timer" method="_on_timeout"]

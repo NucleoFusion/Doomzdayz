@@ -10,6 +10,7 @@ anchors_preset = 0
 script = ExtResource("1_cgibc")
 
 [node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
 offset_right = 514.0
 offset_bottom = 360.0
 scale = Vector2(2.23064, 1.79251)
@@ -27,6 +28,7 @@ text = "Level : 0
 "
 
 [node name="Title" type="Label" parent="."]
+layout_mode = 0
 offset_left = 316.0
 offset_top = 39.0
 offset_right = 839.0
@@ -36,6 +38,7 @@ theme_override_font_sizes/font_size = 100
 text = "Doomzdayz"
 
 [node name="ButtonCont" type="VBoxContainer" parent="."]
+layout_mode = 0
 offset_left = 479.0
 offset_top = 411.0
 offset_right = 616.0
