@@ -12,12 +12,14 @@ offset_right = 1.0
 script = ExtResource("1_dtu4y")
 
 [node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 scale = Vector2(2.23064, 1.79251)
 texture = ExtResource("1_crk0v")
 
 [node name="Title" type="Label" parent="."]
+layout_mode = 0
 offset_left = 316.0
 offset_top = 39.0
 offset_right = 839.0
@@ -27,6 +29,7 @@ theme_override_font_sizes/font_size = 100
 text = "Doomzdayz"
 
 [node name="Score" type="Label" parent="."]
+layout_mode = 0
 offset_left = 264.0
 offset_top = 293.0
 offset_right = 444.0
@@ -36,6 +39,7 @@ theme_override_font_sizes/font_size = 50
 text = "Score: 0"
 
 [node name="HighScore" type="Label" parent="."]
+layout_mode = 0
 offset_left = 590.0
 offset_top = 294.0
 offset_right = 886.0
@@ -45,6 +49,7 @@ theme_override_font_sizes/font_size = 50
 text = "High Score: 0"
 
 [node name="ButtonCont" type="VBoxContainer" parent="."]
+layout_mode = 0
 offset_left = 479.0
 offset_top = 411.0
 offset_right = 616.0

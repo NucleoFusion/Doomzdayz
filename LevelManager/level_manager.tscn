@@ -1,0 +1,56 @@
+[gd_scene load_steps=4 format=3 uid="uid://bkeo53y2e6ge5"]
+
+[ext_resource type="Script" uid="uid://h85gxil10vx7" path="res://LevelManager/level_manager.gd" id="1_cgibc"]
+[ext_resource type="Texture2D" uid="uid://bud2by61p65cf" path="res://MenuScene/assets/360_F_269284892_uHwDKiFqJ98GbFRCnR6iWBRdqg4mA0Tu.webp" id="1_v6rsx"]
+[ext_resource type="FontFile" uid="uid://sbpac0644867" path="res://font/Roboto/Roboto-VariableFont_wdth,wght.ttf" id="2_cgibc"]
+
+[node name="LevelManager" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_cgibc")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 514.0
+offset_bottom = 360.0
+scale = Vector2(2.23064, 1.79251)
+texture = ExtResource("1_v6rsx")
+
+[node name="LevelLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 511.0
+offset_top = 282.0
+offset_right = 693.0
+offset_bottom = 412.0
+theme_override_fonts/font = ExtResource("2_cgibc")
+theme_override_font_sizes/font_size = 50
+text = "Level : 0
+"
+
+[node name="Title" type="Label" parent="."]
+offset_left = 316.0
+offset_top = 39.0
+offset_right = 839.0
+offset_bottom = 157.0
+theme_override_fonts/font = ExtResource("2_cgibc")
+theme_override_font_sizes/font_size = 100
+text = "Doomzdayz"
+
+[node name="ButtonCont" type="VBoxContainer" parent="."]
+offset_left = 479.0
+offset_top = 411.0
+offset_right = 616.0
+offset_bottom = 527.0
+scale = Vector2(1.23313, 1.11861)
+
+[node name="Next" type="Button" parent="ButtonCont"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_cgibc")
+theme_override_font_sizes/font_size = 40
+text = "Next Level
+"
+
+[node name="Quit" type="Button" parent="ButtonCont"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_cgibc")
+theme_override_font_sizes/font_size = 40
+text = "Quit"

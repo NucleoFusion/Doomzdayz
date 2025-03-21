@@ -30,3 +30,12 @@ offset_bottom = 58.0
 theme_override_fonts/font = ExtResource("1_h61sl")
 theme_override_font_sizes/font_size = 30
 text = "High Score: "
+
+[node name="Level" type="Label" parent="."]
+offset_left = 960.0
+offset_top = 22.0
+offset_right = 1120.0
+offset_bottom = 58.0
+theme_override_fonts/font = ExtResource("1_h61sl")
+theme_override_font_sizes/font_size = 30
+text = "Level : "
