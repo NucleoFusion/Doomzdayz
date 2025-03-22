@@ -29,11 +29,10 @@ func _process(delta: float) -> void:
 	
 func shoot_bullet():
 	var bullet = BulletScene.instantiate()
-	bullet.direction = _player.global_position
+	bullet.direction = (_player.global_position - _marker.global_position).normalized()
 	bullet.global_position = _marker.global_position 
-	get_tree().current_scene.add_child(bullet)
 	
-	print(bullet)
+	get_tree().current_scene.add_child(bullet)
 	
 func _on_timer_timeout() :
 	shoot_bullet()

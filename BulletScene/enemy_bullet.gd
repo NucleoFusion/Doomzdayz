@@ -9,11 +9,13 @@ extends CharacterBody2D
 func _ready() -> void:
 	_sprite.rotation = direction.angle()
 	_gameManager = get_tree().current_scene.get_node("GameScene/GameManager")
+	
 	add_to_group("enemy_bullet")
 
 # Called when the node enters the scene tree for the first time.
 func _physics_process(delta: float) -> void:
-	velocity = direction
+	velocity = direction.normalized() * speed
+
 	var collide = move_and_collide(velocity*delta)
 	
 	if collide:

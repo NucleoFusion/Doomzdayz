@@ -50,9 +50,5 @@ func _on_spawn_time_timeout():
 	if !_levelTimer:
 		create_enemy()
 
-
-
-
-
 func _on_level_timer_timeout() -> void:
 	_levelTimer = true

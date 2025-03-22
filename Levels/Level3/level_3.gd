@@ -1,6 +1,6 @@
 extends Node2D
 
-@export var EnemyShoot: PackedScene
+@export var EnemyShootMove: PackedScene
 @export var LevelManager: PackedScene
 @export var EnemyList = []
 
@@ -46,20 +46,17 @@ func rand_coord():
 	return Vector2(x_range,y_range)
 
 func create_enemy():
-	var enemy = EnemyShoot.instantiate()
+	var enemy = EnemyShootMove.instantiate()
 	enemy.global_position = rand_coord()
 	
 	EnemyList.append(enemy)
 	
 	get_tree().current_scene.add_child.call_deferred(enemy)
 	
-
-
-
-func _on_timer_timeout() -> void:
-	_levelTimer = true
-
-
 func _on_spawn_timer_timeout() -> void:
 	if !_levelTimer:
 		create_enemy()
+
+
+func _on_timeout() -> void:
+	_levelTimer = true
