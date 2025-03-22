@@ -1,23 +1,29 @@
 extends Node2D
 
 @export var EnemyNormal: PackedScene
+@export var LevelManager: PackedScene
 @export var EnemyList = []
 
 @onready var _player
 @onready var _levelTimer =  false
 @onready var _gameManager
 
-
 func _ready():
 	_player = get_tree().current_scene.get_node_or_null("GameScene/Player/CharacterBody2D")
-	var _gameManager = get_tree().current_scene.get_node("GameScene/GameManager")
+	var _gameManager = get_tree().current_scene.get_node_or_null("GameScene/GameManager")
 
 	for i in range(5):
 		create_enemy()
 
 func _process(delta: float) :
-	if _levelTimer and EnemyList.size() ==0:
-		_gameManager.Level += 1 
+	for i in range(EnemyList.size() - 1,-1,-1):
+		if !is_instance_valid(EnemyList[i]):
+			EnemyList.remove_at(i)
+			
+	if _levelTimer and EnemyList.size() == 0:
+		var manager = LevelManager.instantiate()
+		get_tree().current_scene.add_child(manager)
+		queue_free()
 	
 func rand_coord():
 	var screen = get_viewport_rect().size
@@ -35,6 +41,7 @@ func rand_coord():
 func create_enemy():
 	var enemy = EnemyNormal.instantiate()
 	enemy.global_position = rand_coord()
+	
 	EnemyList.append(enemy)
 	
 	get_tree().current_scene.add_child.call_deferred(enemy)

@@ -11,7 +11,7 @@ func _ready():
 	_quit.connect("pressed",onQuitPressed)
 	
 func onNextPressed():
-	_gameManager.Level += 1
+	get_tree().current_scene.get_node("GameScene/GameManager").Level += 1
 	
 func onQuitPressed():
 	get_tree().quit()

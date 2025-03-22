@@ -5,7 +5,6 @@ extends CharacterBody2D
 @export var Damage = 100
 @export var Score = 100
 
-
 @onready var _player
 
 func _ready() -> void:
@@ -27,15 +26,6 @@ func _physics_process(delta: float) -> void:
 	if collision:
 		var node = collision.get_collider()
 		
-		if node.is_in_group("bullets"):
-			node.queue_free()
-			Lives -= 1
 		if node.is_in_group("player"):
 			Lives -= 1
 			node.Lives -= 1
-
-
-	
-
-
-	

@@ -24,7 +24,20 @@ func _process(delta: float) -> void:
 	if Lives <= 0:
 		queue_free()
 
-#func _physics_process(delta: float) -> void:
+func _physics_process(delta: float) -> void:
+	var playerPosition = _player.global_position
+	
+	var veloDirection = (playerPosition - global_position)
+	
+	velocity = veloDirection.normalized() * Speed
+	
+	var collision = move_and_collide(velocity * delta)
+	if collision:
+		var node = collision.get_collider()
+		
+		if node.is_in_group("player"):
+			Lives -= 1
+			node.Lives -= 1
 	
 	
 func shoot_bullet():
@@ -32,8 +45,6 @@ func shoot_bullet():
 	bullet.direction = _player.global_position
 	bullet.global_position = _marker.global_position 
 	get_tree().current_scene.add_child(bullet)
-	
-	print(bullet)
 	
 func _on_timer_timeout() :
 	shoot_bullet()

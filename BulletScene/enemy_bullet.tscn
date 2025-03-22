@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://cfo2ikvrgbxud"]
+
+[ext_resource type="Texture2D" uid="uid://bg512xbmstqp6" path="res://BulletScene/assets/EnemyBullet.png" id="1_xe457"]
+[ext_resource type="Script" uid="uid://t6gkwf354kd5" path="res://BulletScene/enemy_bullet.gd" id="1_ye3us"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ye3us"]
+radius = 2.00353
+height = 6.00704
+
+[node name="EnemyBullet" type="CharacterBody2D"]
+scale = Vector2(2.92034, 2.41324)
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_ye3us")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.56726
+shape = SubResource("CapsuleShape2D_ye3us")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_xe457")
