@@ -1,13 +1,21 @@
-[gd_scene load_steps=4 format=3 uid="uid://bkeo53y2e6ge5"]
+[gd_scene load_steps=8 format=3 uid="uid://bkeo53y2e6ge5"]
 
 [ext_resource type="Script" uid="uid://h85gxil10vx7" path="res://LevelManager/level_manager.gd" id="1_cgibc"]
 [ext_resource type="Texture2D" uid="uid://bud2by61p65cf" path="res://MenuScene/assets/360_F_269284892_uHwDKiFqJ98GbFRCnR6iWBRdqg4mA0Tu.webp" id="1_v6rsx"]
 [ext_resource type="FontFile" uid="uid://sbpac0644867" path="res://font/Roboto/Roboto-VariableFont_wdth,wght.ttf" id="2_cgibc"]
+[ext_resource type="PackedScene" uid="uid://yeo5mx6jptiu" path="res://Levels/Level0/level_0.tscn" id="2_x3cop"]
+[ext_resource type="PackedScene" uid="uid://dwj5fvo6bndsj" path="res://Levels/Level1/level_1.tscn" id="3_vj4io"]
+[ext_resource type="PackedScene" uid="uid://bu7epycry5e86" path="res://Levels/Level2/level_2.tscn" id="4_6vept"]
+[ext_resource type="PackedScene" uid="uid://c2bcicuaumr2h" path="res://Levels/Level3/level_3.tscn" id="5_4mjlm"]
 
 [node name="LevelManager" type="Control"]
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_cgibc")
+Level0 = ExtResource("2_x3cop")
+Level1 = ExtResource("3_vj4io")
+Level2 = ExtResource("4_6vept")
+Level3 = ExtResource("5_4mjlm")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 0

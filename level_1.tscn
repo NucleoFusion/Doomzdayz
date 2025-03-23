@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://cco6jyysf6ocq"]
+[gd_scene load_steps=0 format=3 uid="uid://cco6jyysf6ocq"]
 
 [node name="level_1" type="Node2D"]
 
