@@ -1,10 +1,11 @@
 extends Node2D
 
-@export var EnemyNormal: PackedScene
+@export var EnemyShootMove: PackedScene
 @export var EnemyShoot: PackedScene
 @export var LevelManager: PackedScene
 @export var EnemyList = []
 
+@onready var _levelComplete = false
 @onready var _player
 @onready var _levelTimer =  false
 @onready var _gameManager
@@ -21,10 +22,11 @@ func _process(delta: float) :
 		if !is_instance_valid(EnemyList[i]):
 			EnemyList.remove_at(i)
 			
-	if _levelTimer and EnemyList.size() == 0:
-		var manager = LevelManager.instantiate()
-		get_tree().current_scene.add_child(manager)
-		queue_free()
+	if _levelTimer and EnemyList.size() == 0 && !_levelComplete:
+		_levelComplete = true
+		var manager = load("res://LevelManager/level_manager.tscn").instantiate()
+		manager.nextLevel = "res://Levels/Level8/level_8.tscn"
+		get_tree().current_scene.get_node("GameScene").add_child(manager)
 	
 func rand_coord():
 	var screen = get_viewport_rect().size
@@ -46,7 +48,7 @@ func rand_coord():
 	return Vector2(x_range,y_range)
 
 func create_enemy():
-	var enemy = EnemyNormal.instantiate()
+	var enemy = EnemyShootMove.instantiate()
 	var enemy2 = EnemyShoot.instantiate()
 	enemy.global_position = rand_coord()
 	enemy2.global_position = rand_coord()
@@ -58,10 +60,10 @@ func create_enemy():
 
 
 
-func _on_spawntimer_timeout() -> void:
+
+func _on_spawn_timer_timeout() -> void:
 	if !_levelTimer:
 		create_enemy()
 
-
-func _on_level_4_timer_timeout() -> void:
+func _on_level_7_timer_timeout() -> void:
 	_levelTimer = true
