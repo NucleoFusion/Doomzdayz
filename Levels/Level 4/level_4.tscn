@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://de5s2tqifs36h"]
+
+[ext_resource type="Script" uid="uid://cegbkdi4ginsb" path="res://Levels/Level 4/level_4.gd" id="1_f14kd"]
+[ext_resource type="PackedScene" uid="uid://je1f41sqlr2s" path="res://Enemy/Normal/enemy_normal.tscn" id="2_q8vhb"]
+[ext_resource type="PackedScene" uid="uid://c4kq6b6nuha63" path="res://Enemy/EnemyShootMove/enemy_shoot_move.tscn" id="3_0pb78"]
+
+[node name="Level4" type="Node2D"]
+script = ExtResource("1_f14kd")
+EnemyNormal = ExtResource("2_q8vhb")
+EnemyShoot = ExtResource("3_0pb78")
+
+[node name="Spawntimer" type="Timer" parent="."]
+wait_time = 2.5
+autostart = true
+
+[node name="level_4timer" type="Timer" parent="."]
+wait_time = 38.0
+
+[connection signal="timeout" from="Spawntimer" to="." method="_on_spawntimer_timeout"]
+[connection signal="timeout" from="level_4timer" to="." method="_on_level_4_timer_timeout"]
