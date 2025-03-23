@@ -1,7 +1,6 @@
 extends Node2D
 
 @export var EnemyNormal: PackedScene
-@export var NextLevel: PackedScene
 @export var EnemyList = []
 
 @onready var _levelComplete = false

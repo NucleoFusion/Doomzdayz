@@ -3,6 +3,7 @@ extends Node2D
 @export var EnemyShoot: PackedScene
 @export var EnemyList = []
 
+@onready var _levelComplete = false
 @onready var _player
 @onready var _levelTimer =  false
 @onready var _gameManager
@@ -19,10 +20,12 @@ func _process(delta: float) :
 		if !is_instance_valid(EnemyList[i]):
 			EnemyList.remove_at(i)
 			
-	if _levelTimer and EnemyList.size() == 0:
+	if _levelTimer and EnemyList.size() == 0 && !_levelComplete:
+		_levelComplete = true
 		var manager = load("res://LevelManager/level_manager.tscn").instantiate()
-		get_tree().current_scene.add_child(manager)
-		queue_free()
+		manager.nextLevel = "res://Levels/Level1/level_7.tscn"
+		get_tree().current_scene.get_node("GameScene").add_child(manager)
+	
 	
 func rand_coord():
 	var screen = get_viewport_rect().size

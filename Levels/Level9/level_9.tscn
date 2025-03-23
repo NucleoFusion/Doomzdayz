@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://0ywt5b2j2kf8"]
+
+[ext_resource type="Script" uid="uid://d1myus8fsokq8" path="res://Levels/Level9/level_9.gd" id="1_qcr7w"]
+[ext_resource type="PackedScene" uid="uid://c4kq6b6nuha63" path="res://Enemy/EnemyShootMove/enemy_shoot_move.tscn" id="2_3tqko"]
+[ext_resource type="PackedScene" uid="uid://bji8lb5u57e5u" path="res://Enemy/EnemyShooting/enemy_shooting.tscn" id="3_go5ke"]
+[ext_resource type="PackedScene" uid="uid://je1f41sqlr2s" path="res://Enemy/Normal/enemy_normal.tscn" id="4_2xdpo"]
+
+[node name="Level9" type="Node2D"]
+script = ExtResource("1_qcr7w")
+EnemyShootMove = ExtResource("2_3tqko")
+EnemyShoot = ExtResource("3_go5ke")
+EnemyNormal = ExtResource("4_2xdpo")
+
+[node name="SpawnTimer" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
+
+[node name="Level_9Timer" type="Timer" parent="."]
+wait_time = 30.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]
+[connection signal="timeout" from="Level_9Timer" to="." method="_on_level_9_timer_timeout"]
