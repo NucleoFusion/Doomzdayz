@@ -25,7 +25,7 @@ func _process(delta: float) :
 	if _levelTimer and EnemyList.size() == 0 && !_levelComplete:
 		_levelComplete = true
 		var manager = load("res://LevelManager/level_manager.tscn").instantiate()
-		manager.nextLevel = "res://Levels/Level1/level_7.tscn"
+		manager.nextLevel = "res://Levels/Level10/level_10.tscn"
 		get_tree().current_scene.get_node("GameScene").add_child(manager)
 	
 	
