@@ -1,7 +1,6 @@
 extends Node2D
 
 @export var EnemyShootMove: PackedScene
-@export var LevelManager: PackedScene
 @export var EnemyList = []
 
 @onready var _player
@@ -21,7 +20,7 @@ func _process(delta: float) :
 			EnemyList.remove_at(i)
 			
 	if _levelTimer and EnemyList.size() == 0:
-		var manager = LevelManager.instantiate()
+		var manager = load("res://LevelManager/level_manager.tscn").instantiate()
 		get_tree().current_scene.add_child(manager)
 		queue_free()
 	

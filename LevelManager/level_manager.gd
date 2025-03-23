@@ -1,19 +1,10 @@
 extends Control
 
-@onready var _gameManager
-
-@export var LevelList: Array
-@export var Level0: PackedScene
-@export var Level1: PackedScene
-@export var Level2: PackedScene
-@export var Level3: PackedScene
+@export var nextLevel = ""
 
 func _ready():
 	var _start = get_node("ButtonCont/Next")
-	var _gameManager = get_tree().current_scene.get_node("GameScene/GameManager")
 	var _quit = get_node("ButtonCont/Quit")
-	
-	LevelList.append_array([Level0, Level1,Level2,Level3])
 	
 	_start.connect("pressed",onNextPressed)
 	_quit.connect("pressed",onQuitPressed)
@@ -21,12 +12,17 @@ func _ready():
 func onNextPressed():
 	get_tree().current_scene.get_node("GameScene/GameManager").Level += 1
 			
-	var currLevel = LevelList[get_tree().current_scene.get_node("GameScene/GameManager").Level].instantiate()
+	var currLevel = get_tree().current_scene.get_node("GameScene/Level")
+	var next = load(nextLevel).instantiate()
 	
-	get_parent().add_child(currLevel)
-	
-	print(get_tree().current_scene.get_node("GameScene/GameManager").Level)
-	
+	if currLevel and is_instance_valid(currLevel):
+		currLevel.get_parent().remove_child(currLevel)
+		currLevel.call_deferred("free")
+		
+	next.name = "Level"
+	get_tree().current_scene.get_node("GameScene").add_child(next)
+
+	get_parent().remove_child(self)
 	queue_free()
 	
 func onQuitPressed():
