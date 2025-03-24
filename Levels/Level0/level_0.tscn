@@ -1,14 +1,12 @@
-[gd_scene load_steps=4 format=3 uid="uid://yeo5mx6jptiu"]
+[gd_scene load_steps=3 format=3 uid="uid://yeo5mx6jptiu"]
 
 [ext_resource type="Script" uid="uid://hf167y4ob8fl" path="res://Levels/Level0/level_0.gd" id="1_k1l66"]
 [ext_resource type="PackedScene" uid="uid://je1f41sqlr2s" path="res://Enemy/Normal/enemy_normal.tscn" id="2_7k88j"]
-[ext_resource type="PackedScene" uid="uid://dwj5fvo6bndsj" path="res://Levels/Level1/level_1.tscn" id="4_7k88j"]
 
 [node name="Level0" type="Node2D"]
 position = Vector2(0, 1)
 script = ExtResource("1_k1l66")
 EnemyNormal = ExtResource("2_7k88j")
-NextLevel = ExtResource("4_7k88j")
 
 [node name="SpawnTime" type="Timer" parent="."]
 wait_time = 3.0
