@@ -11,7 +11,7 @@ func _ready():
 	
 func onNextPressed():
 	get_tree().current_scene.get_node("GameScene/GameManager").Level += 1
-			
+	
 	var currLevel = get_tree().current_scene.get_node("GameScene/Level")
 	var next = load(nextLevel).instantiate()
 	

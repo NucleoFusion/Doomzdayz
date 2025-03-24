@@ -3,15 +3,13 @@ extends Node
 enum SceneEnum {
 	START_MENU,
 	GAME,
-	DEATH_MENU,
-	LEVEL_MENU
+	DEATH_MENU
 }
 
 @export var CurrScene = SceneEnum.START_MENU
 @export var MenuScene : PackedScene
 @export var GameScene : PackedScene
 @export var DeathScene : PackedScene
-@export  var LevelScene : PackedScene
 @export var details : Dictionary
 
 
