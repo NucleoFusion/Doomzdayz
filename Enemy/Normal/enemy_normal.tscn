@@ -1,11 +1,11 @@
 [gd_scene load_steps=6 format=3 uid="uid://je1f41sqlr2s"]
 
 [ext_resource type="Script" uid="uid://bkvmjjb61p2ve" path="res://Enemy/Normal/enemy_normal.gd" id="1_2u32w"]
-[ext_resource type="Texture2D" uid="uid://eqvnk27jb7gc" path="res://PlayerScene/assets/Pickup Icon - Engines - Burst Engine.png" id="2_xmodm"]
+[ext_resource type="Texture2D" uid="uid://du637sqfmdwm5" path="res://Enemy/Normal/Asteroid.png" id="2_xmodm"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_cjrp2"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_rkr1a"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_cjrp2"]
 atlas = ExtResource("2_xmodm")
 region = Rect2(0, 0, 32, 32)
 
@@ -13,7 +13,7 @@ region = Rect2(0, 0, 32, 32)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_rkr1a")
+"texture": SubResource("AtlasTexture_cjrp2")
 }],
 "loop": true,
 "name": &"default",
@@ -27,6 +27,7 @@ collision_mask = 193
 script = ExtResource("1_2u32w")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(1, 0.752276)
 shape = SubResource("CircleShape2D_cjrp2")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
