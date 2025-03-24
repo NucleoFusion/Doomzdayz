@@ -22,6 +22,9 @@ func _physics_process(delta: float) -> void:
 	
 	velocity = veloDirection.normalized() * Speed
 	
+	
+	rotation += deg_to_rad(1.5) 
+	
 	var collision = move_and_collide(velocity * delta)
 	if collision:
 		var node = collision.get_collider()
