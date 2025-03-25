@@ -10,7 +10,7 @@ EnemyNormal = ExtResource("2_q8vhb")
 EnemyShoot = ExtResource("3_0pb78")
 
 [node name="Spawntimer" type="Timer" parent="."]
-wait_time = 2.5
+wait_time = 2.3
 autostart = true
 
 [node name="level_4timer" type="Timer" parent="."]

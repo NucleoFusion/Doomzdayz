@@ -10,11 +10,11 @@ EnemyShootMove = ExtResource("2_ftarm")
 EnemyShoot = ExtResource("3_gc8i1")
 
 [node name="SpawnTimer" type="Timer" parent="."]
-wait_time = 2.0
+wait_time = 2.3
 autostart = true
 
 [node name="Level_8Timer" type="Timer" parent="."]
-wait_time = 30.0
+wait_time = 21.0
 one_shot = true
 autostart = true
 
