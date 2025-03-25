@@ -18,13 +18,13 @@ texture = ExtResource("1_v6rsx")
 
 [node name="LevelLabel" type="Label" parent="."]
 layout_mode = 0
-offset_left = 511.0
-offset_top = 282.0
-offset_right = 693.0
-offset_bottom = 412.0
+offset_left = 376.0
+offset_top = 284.0
+offset_right = 801.0
+offset_bottom = 414.0
 theme_override_fonts/font = ExtResource("2_cgibc")
 theme_override_font_sizes/font_size = 50
-text = "Level : 0
+text = "Level 0 Completed!
 "
 
 [node name="Title" type="Label" parent="."]
