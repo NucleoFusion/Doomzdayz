@@ -1,6 +1,7 @@
 extends Control
 
 @export var nextLevel = ""
+@onready var _levelLabel
 
 @onready var _player
 
@@ -10,6 +11,11 @@ func _ready():
 	
 	_start.connect("pressed",onNextPressed)
 	_quit.connect("pressed",onQuitPressed)
+
+	_levelLabel = get_node("LevelLabel")
+
+func _process(delta: float) -> void:
+	_levelLabel.text = "Level " + str(get_tree().current_scene.get_node("GameScene/GameManager").Level) + " Completed!"
 	
 func onNextPressed():
 	get_tree().current_scene.get_node("GameScene/GameManager").Level += 1

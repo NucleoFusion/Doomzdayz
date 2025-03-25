@@ -1,41 +1,39 @@
-[gd_scene load_steps=7 format=3 uid="uid://c4kq6b6nuha63"]
+[gd_scene load_steps=6 format=3 uid="uid://c4kq6b6nuha63"]
 
 [ext_resource type="Script" uid="uid://u8hpfncyt0g7" path="res://Enemy/EnemyShootMove/enemy_shoot_move.gd" id="1_v7c63"]
 [ext_resource type="PackedScene" uid="uid://cfo2ikvrgbxud" path="res://BulletScene/enemy_bullet.tscn" id="2_dxp1s"]
-[ext_resource type="Texture2D" uid="uid://eqvnk27jb7gc" path="res://PlayerScene/assets/Pickup Icon - Engines - Burst Engine.png" id="3_q522n"]
+[ext_resource type="Texture2D" uid="uid://bqmqaarbakra5" path="res://Enemy/EnemyShootMove/stealth-export.png" id="3_dxp1s"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ngniy"]
-size = Vector2(20.7495, 16.6355)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_rkr1a"]
-atlas = ExtResource("3_q522n")
-region = Rect2(0, 0, 32, 32)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dxp1s"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_xys26"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_rkr1a")
+"texture": ExtResource("3_dxp1s")
 }],
 "loop": true,
-"name": &"default",
+"name": &"new_animation",
 "speed": 5.0
 }]
 
 [node name="EnemyShootMove" type="CharacterBody2D"]
-position = Vector2(105, 77)
-scale = Vector2(2.32569, 2.26058)
+position = Vector2(17, 20)
+scale = Vector2(0.376531, 0.279802)
 collision_layer = 193
 collision_mask = 193
 script = ExtResource("1_v7c63")
 BulletScene = ExtResource("2_dxp1s")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0.42998, 0.884729)
-shape = SubResource("RectangleShape2D_ngniy")
+position = Vector2(nan, nan)
+scale = Vector2(465.049, nan)
+shape = SubResource("RectangleShape2D_dxp1s")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-44.7179, -33.6197)
 sprite_frames = SubResource("SpriteFrames_xys26")
+animation = &"new_animation"
 
 [node name="BulletTimer" type="Timer" parent="."]
 wait_time = 3.0
