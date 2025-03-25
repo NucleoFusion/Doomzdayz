@@ -6,7 +6,7 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_cjrp2"]
 radius = 8.61968
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_cjrp2"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_xmodm"]
 atlas = ExtResource("2_xmodm")
 region = Rect2(0, 0, 256, 256)
 
@@ -14,7 +14,7 @@ region = Rect2(0, 0, 256, 256)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_cjrp2")
+"texture": SubResource("AtlasTexture_xmodm")
 }],
 "loop": true,
 "name": &"default",

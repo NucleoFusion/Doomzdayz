@@ -1,0 +1,34 @@
+[gd_scene load_steps=6 format=3 uid="uid://dld1mbxv4toef"]
+
+[ext_resource type="Script" uid="uid://bb8wb40056qr" path="res://Boss/Kraken/kraken.gd" id="1_vkppg"]
+[ext_resource type="Texture2D" uid="uid://d2nhfms1n4jw5" path="res://Boss/Kraken/kraken.png" id="2_6d4po"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6sfi1"]
+atlas = ExtResource("2_6d4po")
+region = Rect2(0, 0, 256, 256)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_y343f"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6sfi1")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vkppg"]
+radius = 73.9997
+height = 204.005
+
+[node name="Kraken" type="CharacterBody2D"]
+script = ExtResource("1_vkppg")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_y343f")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 5)
+rotation = 1.57384
+shape = SubResource("CapsuleShape2D_vkppg")

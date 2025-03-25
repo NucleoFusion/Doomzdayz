@@ -60,5 +60,5 @@ func _on_spawn_timer_timeout() -> void:
 		create_enemy()
 
 
-func _on_timeout() -> void:
+func _on_level_timer_timeout() -> void:
 	_levelTimer = true
