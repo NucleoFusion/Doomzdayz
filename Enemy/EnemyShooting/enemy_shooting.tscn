@@ -37,7 +37,7 @@ shape = SubResource("RectangleShape2D_ngniy")
 sprite_frames = SubResource("SpriteFrames_xys26")
 
 [node name="ShootTimer" type="Timer" parent="."]
-wait_time = 2.0
+wait_time = 4.0
 autostart = true
 
 [node name="BulletMarker" type="Marker2D" parent="."]

@@ -20,4 +20,4 @@ position = Vector2(579, 328)
 
 [node name="HUD" parent="." instance=ExtResource("5_wo00q")]
 
-[node name="Level" parent="." instance=ExtResource("5_5b1ro")]
+[node name="Level0" parent="." instance=ExtResource("5_5b1ro")]
