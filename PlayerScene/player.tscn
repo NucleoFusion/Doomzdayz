@@ -50,4 +50,8 @@ scale = Vector2(0.301354, 0.538923)
 position = Vector2(0, -1)
 shape = SubResource("RectangleShape2D_1vsi4")
 
+[node name="ShieldTimer" type="Timer" parent="CharacterBody2D"]
+wait_time = 5.0
+
 [connection signal="timeout" from="CharacterBody2D/ShootTimer" to="CharacterBody2D" method="_on_shoot_timeout"]
+[connection signal="timeout" from="CharacterBody2D/ShieldTimer" to="CharacterBody2D" method="_on_shield_timer_timeout"]

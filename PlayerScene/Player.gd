@@ -1,9 +1,10 @@
 extends CharacterBody2D
 
-enum {
+enum PlayerAction {
 	MENU,
 	ALIVE,
 	DEAD,
+	SHIELDED
 }
 
 @export var speed = 400
@@ -13,7 +14,8 @@ enum {
 @onready var _sprite = get_node("AnimatedSprite2D")
 @onready var _shootTimer = get_node("ShootTimer")
 @onready var _bulletMarker = get_node("AnimatedSprite2D/BulletSpawn")
-
+@onready var _currAction = PlayerAction.ALIVE
+@onready var _shieldTimer = get_node("ShieldTimer")
 var _currAngle = Vector2.ZERO.angle()
 var _shotCooldown = false
 
@@ -21,6 +23,8 @@ func _ready() -> void:
 	add_to_group("player")
 
 func _process(delta: float) -> void:
+	if _currAction == PlayerAction.SHIELDED:
+		print("Shielded")
 	if Lives <= 0:
 		get_tree().current_scene.change_scene("death")
 
@@ -65,4 +69,18 @@ func shoot_bullet() -> void:
 
 func _on_shoot_timeout() -> void:
 	_shotCooldown = false
+
+func remove_life() -> void:
+	if _currAction != PlayerAction.SHIELDED:
+		Lives -= 1
 	
+func handleShield() -> void:
+	_currAction = PlayerAction.SHIELDED
+	_shieldTimer.Start()
+
+	
+
+
+func _on_shield_timer_timeout() -> void:
+	_currAction = PlayerAction.ALIVE
+	_shieldTimer.Stop()
