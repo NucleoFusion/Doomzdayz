@@ -1,9 +1,10 @@
 extends CharacterBody2D
 
-enum {
+enum PlayerAction {
 	MENU,
 	ALIVE,
 	DEAD,
+	SHEILDED
 }
 
 @export var speed = 400
@@ -13,6 +14,7 @@ enum {
 @onready var _sprite = get_node("AnimatedSprite2D")
 @onready var _shootTimer = get_node("ShootTimer")
 @onready var _bulletMarker = get_node("AnimatedSprite2D/BulletSpawn")
+@onready var _currAction = PlayerAction.ALIVE
 
 var _currAngle = Vector2.ZERO.angle()
 var _shotCooldown = false
@@ -65,4 +67,12 @@ func shoot_bullet() -> void:
 
 func _on_shoot_timeout() -> void:
 	_shotCooldown = false
+
+func _remove_life() -> void:
+	if _currAction != PlayerAction.SHEILDED:
+		Lives -= 1
+	
+
+
+
 	
