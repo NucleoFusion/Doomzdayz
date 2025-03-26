@@ -26,7 +26,7 @@ func _process(delta: float) -> void:
 
 func _physics_process(delta: float) -> void:
 	handleMovement()
-	_sprite.rotation = _currAngle
+	rotation = _currAngle
 	if Input.is_action_pressed("shoot") && !_shotCooldown:
 		_shotCooldown = true
 		_shootTimer.start()

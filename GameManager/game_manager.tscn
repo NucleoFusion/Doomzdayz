@@ -1,6 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://d05vuqwjt7lxa"]
+[gd_scene load_steps=3 format=3 uid="uid://d05vuqwjt7lxa"]
 
 [ext_resource type="Script" uid="uid://ynsf6li08cll" path="res://GameManager/game_manager.gd" id="1_8txkt"]
+[ext_resource type="PackedScene" uid="uid://dw8se5c8bmcyg" path="res://PowerUp/powerup.tscn" id="2_rt1ce"]
 
 [node name="GameManager" type="Node"]
 script = ExtResource("1_8txkt")
+PowerUp = ExtResource("2_rt1ce")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 4.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

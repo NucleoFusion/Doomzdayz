@@ -3,6 +3,7 @@ extends Node
 @export var Level = 0
 @export var Score = 0
 @export var HighScore = 0
+@export var PowerUp: PackedScene
 
 @onready var _scoreLabel
 @onready var _highScoreLabel
@@ -29,3 +30,16 @@ func _process(delta: float) -> void:
 	_livesLabel.text = "Lives: " + str(_player.Lives)
 	_levelLabel.text = "Level: " + str(Level)
 	
+
+func spawn_powerup():
+	var x_val = randf_range(0, get_viewport().size.x)
+	var type = randi_range(0,5)
+	var powerup = PowerUp.instantiate()
+	
+	powerup.global_position = Vector2(x_val, 50)
+	powerup.setType(type)
+
+	get_tree().current_scene.get_node("GameScene").add_child(powerup)
+
+func _on_timer_timeout() -> void:
+	spawn_powerup()

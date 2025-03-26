@@ -19,9 +19,11 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ol1em"]
-radius = 15.0
+radius = 19.0263
 
-[node name="Powerup" type="CharacterBody2D"]
+[node name="Powerup" type="Area2D"]
+light_mask = 64
+visibility_layer = 64
 script = ExtResource("1_gy81k")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
