@@ -22,5 +22,5 @@ func _physics_process(delta: float) -> void:
 		var node = collide.get_collider()
 		
 		if node.is_in_group("player"):
-			node.Lives -= 1
+			node.remove_life()
 			queue_free()

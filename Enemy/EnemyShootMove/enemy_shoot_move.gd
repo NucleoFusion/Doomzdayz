@@ -37,7 +37,7 @@ func _physics_process(delta: float) -> void:
 		
 		if node.is_in_group("player"):
 			Lives -= 1
-			node.Lives -= 1
+			node.remove_life()
 	
 	
 func shoot_bullet():
