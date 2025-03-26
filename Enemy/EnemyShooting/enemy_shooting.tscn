@@ -1,21 +1,21 @@
 [gd_scene load_steps=7 format=3 uid="uid://bji8lb5u57e5u"]
 
 [ext_resource type="Script" uid="uid://ccyms63sic1a2" path="res://Enemy/EnemyShooting/enemy_shoot.gd" id="1_0g5a5"]
-[ext_resource type="PackedScene" uid="uid://cfo2ikvrgbxud" path="res://BulletScene/enemy_bullet.tscn" id="2_heu3o"]
-[ext_resource type="Texture2D" uid="uid://eqvnk27jb7gc" path="res://PlayerScene/assets/Pickup Icon - Engines - Burst Engine.png" id="2_ngniy"]
+[ext_resource type="PackedScene" uid="uid://8mudrgr4lmxq" path="res://BulletScene/enemy_shoot_bullet.tscn" id="2_ngniy"]
+[ext_resource type="Texture2D" uid="uid://cdrqn7420e02d" path="res://Enemy/EnemyShooting/body..png" id="3_ngniy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ngniy"]
-size = Vector2(20.7495, 16.6355)
+size = Vector2(31.3885, 39.3704)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_rkr1a"]
-atlas = ExtResource("2_ngniy")
-region = Rect2(0, 0, 32, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_heu3o"]
+atlas = ExtResource("3_ngniy")
+region = Rect2(0, 0, 64, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_xys26"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_rkr1a")
+"texture": SubResource("AtlasTexture_heu3o")
 }],
 "loop": true,
 "name": &"default",
@@ -23,25 +23,26 @@ animations = [{
 }]
 
 [node name="EnemyShooting" type="CharacterBody2D"]
-scale = Vector2(2.32569, 2.26058)
+scale = Vector2(1.8147, 1.88707)
 collision_layer = 193
 collision_mask = 193
 script = ExtResource("1_0g5a5")
-BulletScene = ExtResource("2_heu3o")
+BulletScene = ExtResource("2_ngniy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0.42998, 0.884729)
+position = Vector2(0.21499, -5.08719)
 shape = SubResource("RectangleShape2D_ngniy")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_xys26")
+flip_v = true
 
 [node name="ShootTimer" type="Timer" parent="."]
 wait_time = 4.0
 autostart = true
 
 [node name="BulletMarker" type="Marker2D" parent="."]
-position = Vector2(0, -12.8286)
+position = Vector2(0, -15.4828)
 
 [node name="SpawnAnim" type="Timer" parent="."]
 one_shot = true
