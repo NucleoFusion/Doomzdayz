@@ -11,8 +11,17 @@ enum PowerUp {
 @export var CurrAction = PowerUp.SHIELD
 
 func _ready() -> void:
-	print(CurrAction)
+	add_to_group("powerup")
 	connect("body_entered", _on_body_entered)
+	$AnimatedSprite2D.play("live")
+
+func _process(delta: float) -> void:
+	match CurrAction:
+		PowerUp.SHIELD: $AnimatedSprite2D.play("shield")
+		PowerUp.LIFE: $AnimatedSprite2D.play("live")
+		PowerUp.TRIPLE: $AnimatedSprite2D.play("triple")
+		PowerUp.WAVE: $AnimatedSprite2D.play("wave")
+		PowerUp.SCORE: $AnimatedSprite2D.play("score")
 
 func _physics_process(delta: float) -> void:
 	position.y += 40 * delta
