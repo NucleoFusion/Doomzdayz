@@ -39,8 +39,10 @@ scale = Vector2(3.36364, 3.45)
 sprite_frames = SubResource("SpriteFrames_1dgtk")
 
 [node name="BulletSpawn" type="Marker2D" parent="CharacterBody2D/AnimatedSprite2D"]
-position = Vector2(2.98023e-08, -15.6522)
+position = Vector2(-5.63826e-09, -16.8116)
 scale = Vector2(0.301354, 0.538923)
+
+[node name="Marker2D" type="Marker2D" parent="CharacterBody2D/AnimatedSprite2D"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
 position = Vector2(0.75, 9.5)
