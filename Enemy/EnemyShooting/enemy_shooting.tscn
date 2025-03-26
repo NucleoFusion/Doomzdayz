@@ -24,8 +24,8 @@ animations = [{
 
 [node name="EnemyShooting" type="CharacterBody2D"]
 scale = Vector2(1.8147, 1.88707)
-collision_layer = 193
-collision_mask = 193
+collision_layer = 197
+collision_mask = 197
 script = ExtResource("1_0g5a5")
 BulletScene = ExtResource("2_ngniy")
 

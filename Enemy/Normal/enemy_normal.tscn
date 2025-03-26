@@ -23,8 +23,8 @@ animations = [{
 
 [node name="EnemyNormal" type="CharacterBody2D"]
 scale = Vector2(2.32569, 2.26058)
-collision_layer = 193
-collision_mask = 193
+collision_layer = 197
+collision_mask = 197
 script = ExtResource("1_2u32w")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

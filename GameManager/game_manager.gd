@@ -4,6 +4,7 @@ extends Node
 @export var Score = 0
 @export var HighScore = 0
 @export var PowerUp: PackedScene
+@export var isLevelManager = false
 
 @onready var _scoreLabel
 @onready var _highScoreLabel
@@ -42,4 +43,5 @@ func spawn_powerup():
 	get_tree().current_scene.get_node("GameScene").add_child(powerup)
 
 func _on_timer_timeout() -> void:
-	spawn_powerup()
+	if !isLevelManager:
+		spawn_powerup()

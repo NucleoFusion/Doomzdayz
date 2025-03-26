@@ -44,7 +44,11 @@ sprite_frames = SubResource("SpriteFrames_1dgtk")
 position = Vector2(-5.63826e-09, -16.8116)
 scale = Vector2(0.301354, 0.538923)
 
-[node name="Marker2D" type="Marker2D" parent="CharacterBody2D/AnimatedSprite2D"]
+[node name="LeftMarker" type="Marker2D" parent="CharacterBody2D/AnimatedSprite2D"]
+position = Vector2(-5.05405, -12.4638)
+
+[node name="RightMarker" type="Marker2D" parent="CharacterBody2D/AnimatedSprite2D"]
+position = Vector2(5.05405, -12.4638)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
 position = Vector2(0, -1)
@@ -53,5 +57,9 @@ shape = SubResource("RectangleShape2D_1vsi4")
 [node name="ShieldTimer" type="Timer" parent="CharacterBody2D"]
 wait_time = 5.0
 
+[node name="TripleTimer" type="Timer" parent="CharacterBody2D"]
+wait_time = 4.0
+
 [connection signal="timeout" from="CharacterBody2D/ShootTimer" to="CharacterBody2D" method="_on_shoot_timeout"]
 [connection signal="timeout" from="CharacterBody2D/ShieldTimer" to="CharacterBody2D" method="_on_shield_timer_timeout"]
+[connection signal="timeout" from="CharacterBody2D/TripleTimer" to="CharacterBody2D" method="_on_triple_timer_timeout"]

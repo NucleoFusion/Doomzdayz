@@ -21,8 +21,8 @@ radius = 67.8591
 [node name="EnemyShootMove" type="CharacterBody2D"]
 position = Vector2(17, 20)
 scale = Vector2(0.376531, 0.279802)
-collision_layer = 193
-collision_mask = 193
+collision_layer = 197
+collision_mask = 197
 script = ExtResource("1_v7c63")
 BulletScene = ExtResource("2_dxp1s")
 

@@ -10,12 +10,16 @@ enum PlayerAction {
 @export var speed = 400
 @export var _bulletScene: PackedScene
 @export var Lives = 3
+@export var isTripleShoot = false
 
 @onready var _sprite = get_node("AnimatedSprite2D")
 @onready var _shootTimer = get_node("ShootTimer")
 @onready var _bulletMarker = get_node("AnimatedSprite2D/BulletSpawn")
 @onready var _currAction = PlayerAction.ALIVE
 @onready var _shieldTimer = get_node("ShieldTimer")
+@onready var _leftMarker = get_node("AnimatedSprite2D/LeftMarker")
+@onready var _rightMarker = get_node("AnimatedSprite2D/RightMarker")
+
 var _currAngle = Vector2.ZERO.angle()
 var _shotCooldown = false
 
@@ -65,7 +69,21 @@ func shoot_bullet() -> void:
 	bullet.global_position = _bulletMarker.global_position
 	bullet.direction = Vector2.UP.rotated(_currAngle)
 
+	if isTripleShoot:
+		var leftBullet = _bulletScene.instantiate()
+		var rightBullet = _bulletScene.instantiate()
+		
+		leftBullet.global_position = _leftMarker.global_position
+		rightBullet.global_position = _rightMarker.global_position
+
+		leftBullet.direction = Vector2.UP.rotated(_currAngle)
+		rightBullet.direction = Vector2.UP.rotated(_currAngle)
+
+		get_tree().current_scene.add_child(leftBullet)
+		get_tree().current_scene.add_child(rightBullet)
 	get_tree().current_scene.add_child(bullet)
+	
+	
 
 func _on_shoot_timeout() -> void:
 	_shotCooldown = false
@@ -79,8 +97,15 @@ func handleShield() -> void:
 	_shieldTimer.Start()
 
 	
-
+func tripleShoot():
+	isTripleShoot = true
+	get_node("TripleTimer").start()
+	
 
 func _on_shield_timer_timeout() -> void:
 	_currAction = PlayerAction.ALIVE
 	_shieldTimer.Stop()
+
+
+func _on_triple_timer_timeout() -> void:
+	isTripleShoot = false

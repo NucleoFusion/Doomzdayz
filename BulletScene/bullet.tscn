@@ -7,10 +7,9 @@
 radius = 11.0
 
 [node name="Bullet" type="CharacterBody2D"]
-position = Vector2(-1, 0)
-scale = Vector2(0.410251, 0.349979)
-collision_layer = 192
-collision_mask = 192
+scale = Vector2(0.250754, 0.216737)
+collision_layer = 4
+collision_mask = 4
 script = ExtResource("1_ken6i")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
