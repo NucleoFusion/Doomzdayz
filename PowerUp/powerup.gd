@@ -42,7 +42,7 @@ func _on_body_entered(body):
 	
 func apply_powerup(player):
 	match CurrAction:
-		#PowerUp.SHIELD: $AnimatedSprite2D.play("shield")
+		PowerUp.SHIELD: handleShield()
 		PowerUp.LIFE: handleLives()
 		PowerUp.TRIPLE: handleTripleShoot()
 		#PowerUp.WAVE: $AnimatedSprite2D.play("wave")
@@ -55,3 +55,6 @@ func handleLives():
 
 func handleTripleShoot():
 	_player.tripleShoot()
+
+func handleShield():
+	_player.handleShield()

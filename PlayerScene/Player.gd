@@ -94,7 +94,8 @@ func remove_life() -> void:
 	
 func handleShield() -> void:
 	_currAction = PlayerAction.SHIELDED
-	_shieldTimer.Start()
+	_shieldTimer.start()
+
 
 	
 func tripleShoot():
@@ -104,7 +105,7 @@ func tripleShoot():
 
 func _on_shield_timer_timeout() -> void:
 	_currAction = PlayerAction.ALIVE
-	_shieldTimer.Stop()
+	_shieldTimer.stop()
 
 
 func _on_triple_timer_timeout() -> void:
