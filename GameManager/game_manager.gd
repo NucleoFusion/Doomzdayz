@@ -5,6 +5,7 @@ extends Node
 @export var HighScore = 0
 @export var PowerUp: PackedScene
 @export var isLevelManager = false
+@export var Multiplier = 1
 
 @onready var _scoreLabel
 @onready var _highScoreLabel
@@ -42,6 +43,18 @@ func spawn_powerup():
 
 	get_tree().current_scene.get_node("GameScene").add_child(powerup)
 
+func add_score(score : int):
+	Score += score*Multiplier
+
 func _on_timer_timeout() -> void:
 	if !isLevelManager:
 		spawn_powerup()
+
+func handleMulti():
+	Multiplier = 2
+	$MultiTimer.start()
+
+func _on_multi_timer_timeout() -> void:
+	Multiplier = 1
+	$MultiTimer.stop()
+	

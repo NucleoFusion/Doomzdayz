@@ -20,7 +20,7 @@ func _physics_process(delta: float) -> void:
 		var node = collide.get_collider()
 		
 		if node.is_in_group("enemies"):
-			_gameManager.Score += node.Score
+			_gameManager.add_score(node.Score)
 			node.queue_free()
 			queue_free()
 		
