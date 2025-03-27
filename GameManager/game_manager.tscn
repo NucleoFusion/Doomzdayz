@@ -11,4 +11,8 @@ PowerUp = ExtResource("2_rt1ce")
 wait_time = 4.0
 autostart = true
 
+[node name="MultiTimer" type="Timer" parent="."]
+wait_time = 10.0
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="MultiTimer" to="." method="_on_multi_timer_timeout"]
