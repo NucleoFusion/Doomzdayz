@@ -12,6 +12,9 @@ func _ready() -> void:
 	
 	add_to_group("enemy_bullet")
 
+func _process(delta: float) -> void:
+	rotation += deg_to_rad(1)
+
 # Called when the node enters the scene tree for the first time.
 func _physics_process(delta: float) -> void:
 	velocity = direction.normalized() * speed
