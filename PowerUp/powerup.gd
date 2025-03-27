@@ -11,6 +11,7 @@ enum PowerUp {
 @export var CurrAction = PowerUp.SHIELD
 
 @onready var _player = get_tree().current_scene.get_node("GameScene/Player/CharacterBody2D")
+@onready var _gameManager = get_tree().current_scene.get_node("GameScene/GameManager")
 
 func _ready() -> void:
 	add_to_group("powerup")
@@ -42,11 +43,11 @@ func _on_body_entered(body):
 	
 func apply_powerup(player):
 	match CurrAction:
-		#PowerUp.SHIELD: $AnimatedSprite2D.play("shield")
-		PowerUp.LIFE: handleLives()
-		PowerUp.TRIPLE: handleTripleShoot()
-		#PowerUp.WAVE: $AnimatedSprite2D.play("wave")
-		#PowerUp.SCORE: $AnimatedSprite2D.play("score")
+		#PowerUp.SHIELD : $AnimatedSprite2D.play("shield")
+		PowerUp.LIFE : handleLives()
+		PowerUp.TRIPLE : handleTripleShoot()
+		#PowerUp.WAVE : $AnimatedSprite2D.play("wave")
+		PowerUp.SCORE : handleScore()
 		
 	queue_free()  # Remove power-up after collection
 
@@ -55,3 +56,6 @@ func handleLives():
 
 func handleTripleShoot():
 	_player.tripleShoot()
+	
+func handleScore():
+	_gameManager.handleMulti()
