@@ -50,7 +50,7 @@ func create_enemy():
 	
 	EnemyList.append(enemy)
 	
-	get_tree().current_scene.add_child.call_deferred(enemy)
+	get_tree().current_scene.get_node("GameScene").add_child.call_deferred(enemy)
 
 func _on_spawn_time_timeout():
 	if !_levelTimer:
