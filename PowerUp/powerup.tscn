@@ -1,6 +1,6 @@
 [gd_scene load_steps=116 format=3 uid="uid://dw8se5c8bmcyg"]
 
-[ext_resource type="Script" uid="uid://bfpjmy6arwqnk" path="res://PowerUp/powerup.gd" id="1_gy81k"]
+[ext_resource type="Script" uid="uid://bfpjmy6arwqnk" path="res://PowerUp/powerup.gd" id="1_r8ad2"]
 [ext_resource type="Texture2D" uid="uid://g4qmb23my2yg" path="res://PowerUp/triple-Sheet.png" id="2_gy81k"]
 [ext_resource type="Texture2D" uid="uid://18sjxv43xc53" path="res://PowerUp/shield-Sheet.png" id="2_newq2"]
 [ext_resource type="Texture2D" uid="uid://dcbfauar3diak" path="res://PowerUp/lives-Sheet.png" id="2_ol1em"]
@@ -881,7 +881,7 @@ radius = 19.0263
 light_mask = 64
 visibility_layer = 64
 scale = Vector2(1.31294, 1.27102)
-script = ExtResource("1_gy81k")
+script = ExtResource("1_r8ad2")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(1.25, 1.20312)
