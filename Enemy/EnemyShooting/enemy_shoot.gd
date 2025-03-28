@@ -7,6 +7,7 @@ extends CharacterBody2D
 @export var BulletScene : PackedScene
 
 @onready var _player
+@onready var _gameManager = get_tree().current_scene.get_node("GameScene/GameManager")
 @onready var _marker
 @onready var _sprite
 
@@ -22,6 +23,9 @@ func _process(delta: float) -> void:
 	rotation += PI/2
 	
 	if Lives <= 0:
+		var n = randi_range(0,3)
+		if n == 1:
+			_gameManager.spawn_powerup()
 		queue_free()
 
 #func _physics_process(delta: float) -> void:

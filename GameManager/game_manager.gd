@@ -46,9 +46,6 @@ func spawn_powerup():
 func add_score(score : int):
 	Score += score*Multiplier
 
-func _on_timer_timeout() -> void:
-	if !isLevelManager:
-		spawn_powerup()
 
 func handleMulti():
 	Multiplier *= 2
