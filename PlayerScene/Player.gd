@@ -91,6 +91,7 @@ func _on_shoot_timeout() -> void:
 func remove_life() -> void:
 	if _currAction != PlayerAction.SHIELDED:
 		Lives -= 1
+		$AnimatedSprite2D.play("damage")
 	
 func handleShield() -> void:
 	_currAction = PlayerAction.SHIELDED
