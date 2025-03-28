@@ -1,10 +1,11 @@
-[gd_scene load_steps=24 format=3 uid="uid://brnermo6y7owo"]
+[gd_scene load_steps=25 format=3 uid="uid://brnermo6y7owo"]
 
 [ext_resource type="Script" uid="uid://bedjodeb5gqrp" path="res://PlayerScene/Player.gd" id="1_2qdwb"]
 [ext_resource type="PackedScene" uid="uid://c8yrn2nvntbwa" path="res://BulletScene/bullet.tscn" id="2_0gbni"]
 [ext_resource type="Texture2D" uid="uid://qtpnulce0xod" path="res://PlayerScene/assets/DamageSheet.png" id="3_ja0gq"]
 [ext_resource type="Texture2D" uid="uid://ey04n214n0uy" path="res://PlayerScene/assets/ShooterSprite.png" id="3_sgma1"]
 [ext_resource type="Texture2D" uid="uid://g6dr4o3bdnyw" path="res://PlayerScene/assets/shield-sheet.png" id="5_1o58h"]
+[ext_resource type="PackedScene" uid="uid://cbp3a1oojhnoh" path="res://ShockwaveAnim/shockwave.tscn" id="6_6mj8h"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1o58h"]
 atlas = ExtResource("3_ja0gq")
@@ -222,6 +223,8 @@ wait_time = 5.0
 
 [node name="TripleTimer" type="Timer" parent="CharacterBody2D"]
 wait_time = 4.0
+
+[node name="Shockwave" parent="CharacterBody2D" instance=ExtResource("6_6mj8h")]
 
 [connection signal="timeout" from="CharacterBody2D/ShootTimer" to="CharacterBody2D" method="_on_shoot_timeout"]
 [connection signal="timeout" from="CharacterBody2D/ShieldTimer" to="CharacterBody2D" method="_on_shield_timer_timeout"]

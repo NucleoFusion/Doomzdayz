@@ -1,0 +1,58 @@
+[gd_scene load_steps=9 format=3 uid="uid://cbp3a1oojhnoh"]
+
+[ext_resource type="Script" uid="uid://bty80m3xjss3p" path="res://ShockwaveAnim/shockwave.gd" id="1_v2gwy"]
+[ext_resource type="Texture2D" uid="uid://dgcsnu0koawh3" path="res://ShockwaveAnim/wave-Sheet.png" id="2_dpny6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5vyxa"]
+atlas = ExtResource("2_dpny6")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kssqp"]
+atlas = ExtResource("2_dpny6")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eayl1"]
+atlas = ExtResource("2_dpny6")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_haabn"]
+atlas = ExtResource("2_dpny6")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2s4gq"]
+atlas = ExtResource("2_dpny6")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ieyqq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5vyxa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kssqp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eayl1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_haabn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2s4gq")
+}],
+"loop": false,
+"name": &"default",
+"speed": 9.0
+}]
+
+[node name="Shockwave" type="Node2D"]
+script = ExtResource("1_v2gwy")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(6.25, 6.25)
+sprite_frames = SubResource("SpriteFrames_ieyqq")
+frame = 2
+frame_progress = 0.427497
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

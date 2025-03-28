@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://g6dr4o3bdnyw"
-path="res://.godot/imported/shield-sheet.png-e448006a162e4f7aa3e2a32a352a58fa.ctex"
+uid="uid://dgcsnu0koawh3"
+path="res://.godot/imported/wave-Sheet.png-bef7fc6a049702f5e6394ce1a9f0ef72.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://PlayerScene/assets/shield-sheet.png"
-dest_files=["res://.godot/imported/shield-sheet.png-e448006a162e4f7aa3e2a32a352a58fa.ctex"]
+source_file="res://ShockwaveAnim/wave-Sheet.png"
+dest_files=["res://.godot/imported/wave-Sheet.png-bef7fc6a049702f5e6394ce1a9f0ef72.ctex"]
 
 [params]
 

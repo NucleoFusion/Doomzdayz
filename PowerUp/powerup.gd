@@ -67,8 +67,11 @@ func handleScore():
 	_gameManager.handleMulti()
 	
 func handleWave():
-	var chi = get_tree().current_scene.get_node("GameScene").get_children()
-	for i in chi :
+	var children = get_tree().current_scene.get_node("GameScene").get_children()
+	
+	_player.get_node("Shockwave").startAnim()
+	
+	for i in children :
 		if i.is_in_group("enemies"):
 			var ipos = i.global_position
 			var playerpos = _player.global_position

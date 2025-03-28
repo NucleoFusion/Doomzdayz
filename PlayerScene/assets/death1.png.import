@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://g6dr4o3bdnyw"
-path="res://.godot/imported/shield-sheet.png-e448006a162e4f7aa3e2a32a352a58fa.ctex"
+uid="uid://doa08dvhi6yjj"
+path="res://.godot/imported/death1.png-7408d405d47a0c28b5f48d977c7af363.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://PlayerScene/assets/shield-sheet.png"
-dest_files=["res://.godot/imported/shield-sheet.png-e448006a162e4f7aa3e2a32a352a58fa.ctex"]
+source_file="res://PlayerScene/assets/death1.png"
+dest_files=["res://.godot/imported/death1.png-7408d405d47a0c28b5f48d977c7af363.ctex"]
 
 [params]
 
