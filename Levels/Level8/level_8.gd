@@ -56,8 +56,11 @@ func create_enemy():
 	EnemyList.append(enemy)
 	EnemyList.append(enemy2)
 	
-	get_tree().current_scene.get_node("GameScene").add_child.call_deferred(enemy)
-	get_tree().current_scene.get_node("GameScene").add_child.call_deferred(enemy2)
+	var n = randi_range(0,2)
+	if n==0:
+		get_tree().current_scene.get_node("GameScene").add_child.call_deferred(enemy)
+	else:
+		get_tree().current_scene.get_node("GameScene").add_child.call_deferred(enemy2)
 
 
 

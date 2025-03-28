@@ -51,7 +51,7 @@ func _on_timer_timeout() -> void:
 		spawn_powerup()
 
 func handleMulti():
-	Multiplier = 2
+	Multiplier *= 2
 	$MultiTimer.start()
 
 func _on_multi_timer_timeout() -> void:

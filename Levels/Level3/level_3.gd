@@ -1,6 +1,6 @@
 extends Node2D
 
-@export var EnemyShootMove: PackedScene
+@export var EnemyShoot: PackedScene
 @export var EnemyList = []
 
 @onready var _levelComplete = false
@@ -48,7 +48,7 @@ func rand_coord():
 	return Vector2(x_range,y_range)
 
 func create_enemy():
-	var enemy = EnemyShootMove.instantiate()
+	var enemy = EnemyShoot.instantiate()
 	enemy.global_position = rand_coord()
 	
 	EnemyList.append(enemy)
