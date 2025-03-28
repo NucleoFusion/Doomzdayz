@@ -64,6 +64,9 @@ func handleMovement():
 	 
 
 func shoot_bullet() -> void:
+	if get_tree().current_scene.has_node("GameScene/LevelManager"):
+		return
+		
 	var bullet = _bulletScene.instantiate()
 	
 	bullet.global_position = _bulletMarker.global_position
@@ -96,6 +99,7 @@ func remove_life() -> void:
 func handleShield() -> void:
 	_currAction = PlayerAction.SHIELDED
 	_shieldTimer.start()
+	$AnimatedSprite2D.play("shield")
 
 
 	
@@ -107,7 +111,7 @@ func tripleShoot():
 func _on_shield_timer_timeout() -> void:
 	_currAction = PlayerAction.ALIVE
 	_shieldTimer.stop()
-
+	$AnimatedSprite2D.stop()
 
 func _on_triple_timer_timeout() -> void:
 	isTripleShoot = false

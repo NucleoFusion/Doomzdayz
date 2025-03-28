@@ -1,9 +1,10 @@
-[gd_scene load_steps=17 format=3 uid="uid://brnermo6y7owo"]
+[gd_scene load_steps=24 format=3 uid="uid://brnermo6y7owo"]
 
 [ext_resource type="Script" uid="uid://bedjodeb5gqrp" path="res://PlayerScene/Player.gd" id="1_2qdwb"]
 [ext_resource type="PackedScene" uid="uid://c8yrn2nvntbwa" path="res://BulletScene/bullet.tscn" id="2_0gbni"]
 [ext_resource type="Texture2D" uid="uid://qtpnulce0xod" path="res://PlayerScene/assets/DamageSheet.png" id="3_ja0gq"]
 [ext_resource type="Texture2D" uid="uid://ey04n214n0uy" path="res://PlayerScene/assets/ShooterSprite.png" id="3_sgma1"]
+[ext_resource type="Texture2D" uid="uid://g6dr4o3bdnyw" path="res://PlayerScene/assets/shield-sheet.png" id="5_1o58h"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1o58h"]
 atlas = ExtResource("3_ja0gq")
@@ -44,6 +45,30 @@ region = Rect2(256, 0, 32, 32)
 [sub_resource type="AtlasTexture" id="AtlasTexture_ja0gq"]
 atlas = ExtResource("3_sgma1")
 region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1t3ax"]
+atlas = ExtResource("5_1o58h")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ukrsj"]
+atlas = ExtResource("5_1o58h")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ja4x7"]
+atlas = ExtResource("5_1o58h")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_phqpc"]
+atlas = ExtResource("5_1o58h")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x8w34"]
+atlas = ExtResource("5_1o58h")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rrie6"]
+atlas = ExtResource("5_1o58h")
+region = Rect2(160, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_1dgtk"]
 animations = [{
@@ -86,6 +111,74 @@ animations = [{
 "loop": true,
 "name": &"default",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1t3ax")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ukrsj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ja4x7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_phqpc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x8w34")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rrie6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1t3ax")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1t3ax")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1t3ax")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1t3ax")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1t3ax")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1t3ax")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1t3ax")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1t3ax")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1t3ax")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1t3ax")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1t3ax")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1t3ax")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1t3ax")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1t3ax")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1t3ax")
+}],
+"loop": true,
+"name": &"shield",
+"speed": 15.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1vsi4"]
@@ -108,9 +201,7 @@ wait_time = 0.2
 position = Vector2(1, 15)
 scale = Vector2(3.36364, 3.45)
 sprite_frames = SubResource("SpriteFrames_1dgtk")
-animation = &"damage"
-frame = 8
-frame_progress = 1.0
+frame_progress = 0.816238
 
 [node name="BulletSpawn" type="Marker2D" parent="CharacterBody2D/AnimatedSprite2D"]
 position = Vector2(-5.63826e-09, -16.8116)
