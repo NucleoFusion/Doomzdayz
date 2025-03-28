@@ -47,7 +47,7 @@ func apply_powerup(player):
 		PowerUp.SHIELD: handleShield()
 		PowerUp.LIFE : handleLives()
 		PowerUp.TRIPLE : handleTripleShoot()
-		#PowerUp.WAVE : $AnimatedSprite2D.play("wave")
+		PowerUp.WAVE : handleWave()
 		PowerUp.SCORE : handleScore()
 		
 	queue_free()  # Remove power-up after collection
@@ -65,3 +65,13 @@ func handleShield():
 	
 func handleScore():
 	_gameManager.handleMulti()
+	
+func handleWave():
+	var chi = get_tree().current_scene.get_node("GameScene").get_children()
+	for i in chi :
+		if i.is_in_group("enemies"):
+			var ipos = i.global_position
+			var playerpos = _player.global_position
+			if ipos.x > playerpos.x - float(400) and ipos.x < playerpos.x +float(400):
+				if ipos.y > playerpos.y - float(400) and ipos.y < playerpos.y +float(400):
+					i.queue_free()

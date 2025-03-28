@@ -1,7 +1,7 @@
 extends Node2D
 
 @export var EnemyShootMove: PackedScene
-@export var EnemyShoot: PackedScene
+@export var EnemyNormal: PackedScene
 @export var LevelManager: PackedScene
 @export var EnemyList = []
 
@@ -35,13 +35,13 @@ func rand_coord():
 	var x_range = randf_range(0, screen.x)
 	var y_range = randf_range(0,screen.y)
 	
-	if x_range > playerPos.x - float(400) and x_range < playerPos.y + float(400):
+	if x_range > playerPos.x - float(400) and x_range < playerPos.x + float(400):
 		if  y_range > playerPos.y - float(400) and y_range < playerPos.y + float(400):
 			return rand_coord()	
 
 	for i in EnemyList:
 		var enemyPos = i.global_position
-		if x_range > enemyPos.x - float(400) and x_range < enemyPos.y + float(400):
+		if x_range > enemyPos.x - float(400) and x_range < enemyPos.x + float(400):
 			if  y_range > enemyPos.y - float(400) and y_range < enemyPos.y + float(400):
 				return rand_coord()
 	
@@ -49,15 +49,18 @@ func rand_coord():
 
 func create_enemy():
 	var enemy = EnemyShootMove.instantiate()
-	var enemy2 = EnemyShoot.instantiate()
+	var enemy2 = EnemyNormal.instantiate()
 	enemy.global_position = rand_coord()
 	enemy2.global_position = rand_coord()
 	
 	EnemyList.append(enemy)
 	EnemyList.append(enemy2)
 	
-	get_tree().current_scene.get_node("GameScene").add_child.call_deferred(enemy)
-	get_tree().current_scene.get_node("GameScene").add_child.call_deferred(enemy2)
+	var n = randi_range(0,2)
+	if n==0:
+		get_tree().current_scene.get_node("GameScene").add_child.call_deferred(enemy)
+	else:
+		get_tree().current_scene.get_node("GameScene").add_child.call_deferred(enemy2)
 
 
 
