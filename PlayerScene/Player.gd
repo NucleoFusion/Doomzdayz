@@ -30,7 +30,8 @@ func _process(delta: float) -> void:
 	if _currAction == PlayerAction.SHIELDED:
 		print("Shielded")
 	if Lives <= 0:
-		get_tree().current_scene.change_scene("death")
+		$AnimatedSprite2D.play("death")
+		
 
 func _physics_process(delta: float) -> void:
 	handleMovement()
@@ -115,3 +116,8 @@ func _on_shield_timer_timeout() -> void:
 
 func _on_triple_timer_timeout() -> void:
 	isTripleShoot = false
+
+
+func _on_animated_sprite_2d_animation_finished() -> void:
+	if $AnimatedSprite2D.animation == "death":
+		get_tree().current_scene.change_scene("death")

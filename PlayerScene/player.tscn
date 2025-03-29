@@ -1,10 +1,11 @@
-[gd_scene load_steps=25 format=3 uid="uid://brnermo6y7owo"]
+[gd_scene load_steps=35 format=3 uid="uid://brnermo6y7owo"]
 
 [ext_resource type="Script" uid="uid://bedjodeb5gqrp" path="res://PlayerScene/Player.gd" id="1_2qdwb"]
 [ext_resource type="PackedScene" uid="uid://c8yrn2nvntbwa" path="res://BulletScene/bullet.tscn" id="2_0gbni"]
 [ext_resource type="Texture2D" uid="uid://qtpnulce0xod" path="res://PlayerScene/assets/DamageSheet.png" id="3_ja0gq"]
-[ext_resource type="Texture2D" uid="uid://ey04n214n0uy" path="res://PlayerScene/assets/ShooterSprite.png" id="3_sgma1"]
+[ext_resource type="Texture2D" uid="uid://dkrrym3u8j821" path="res://PlayerScene/assets/death-Sheet.png" id="4_v6ces"]
 [ext_resource type="Texture2D" uid="uid://g6dr4o3bdnyw" path="res://PlayerScene/assets/shield-sheet.png" id="5_1o58h"]
+[ext_resource type="Texture2D" uid="uid://dji8gpljefg10" path="res://PlayerScene/assets/ShooterSprite1.png" id="5_gwk6y"]
 [ext_resource type="PackedScene" uid="uid://cbp3a1oojhnoh" path="res://ShockwaveAnim/shockwave.tscn" id="6_6mj8h"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1o58h"]
@@ -43,8 +44,44 @@ region = Rect2(224, 0, 32, 32)
 atlas = ExtResource("3_ja0gq")
 region = Rect2(256, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ja0gq"]
-atlas = ExtResource("3_sgma1")
+[sub_resource type="AtlasTexture" id="AtlasTexture_i2kwp"]
+atlas = ExtResource("4_v6ces")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4gb1f"]
+atlas = ExtResource("4_v6ces")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_olqmv"]
+atlas = ExtResource("4_v6ces")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fyvjw"]
+atlas = ExtResource("4_v6ces")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pn1i4"]
+atlas = ExtResource("4_v6ces")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qvy0t"]
+atlas = ExtResource("4_v6ces")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_86vgg"]
+atlas = ExtResource("4_v6ces")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mdmbt"]
+atlas = ExtResource("4_v6ces")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0akdr"]
+atlas = ExtResource("4_v6ces")
+region = Rect2(256, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dqrpv"]
+atlas = ExtResource("5_gwk6y")
 region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1t3ax"]
@@ -107,7 +144,39 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ja0gq")
+"texture": SubResource("AtlasTexture_i2kwp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4gb1f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_olqmv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fyvjw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pn1i4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qvy0t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_86vgg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mdmbt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0akdr")
+}],
+"loop": false,
+"name": &"death",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dqrpv")
 }],
 "loop": true,
 "name": &"default",
@@ -202,7 +271,6 @@ wait_time = 0.2
 position = Vector2(1, 15)
 scale = Vector2(3.36364, 3.45)
 sprite_frames = SubResource("SpriteFrames_1dgtk")
-frame_progress = 0.816238
 
 [node name="BulletSpawn" type="Marker2D" parent="CharacterBody2D/AnimatedSprite2D"]
 position = Vector2(-5.63826e-09, -16.8116)
@@ -227,5 +295,6 @@ wait_time = 4.0
 [node name="Shockwave" parent="CharacterBody2D" instance=ExtResource("6_6mj8h")]
 
 [connection signal="timeout" from="CharacterBody2D/ShootTimer" to="CharacterBody2D" method="_on_shoot_timeout"]
+[connection signal="animation_finished" from="CharacterBody2D/AnimatedSprite2D" to="CharacterBody2D" method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="timeout" from="CharacterBody2D/ShieldTimer" to="CharacterBody2D" method="_on_shield_timer_timeout"]
 [connection signal="timeout" from="CharacterBody2D/TripleTimer" to="CharacterBody2D" method="_on_triple_timer_timeout"]

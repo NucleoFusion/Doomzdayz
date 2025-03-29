@@ -35,15 +35,14 @@ func rand_coord():
 	var x_range = randf_range(0, screen.x)
 	var y_range = randf_range(0,screen.y)
 	
-	if x_range > playerPos.x - float(400) and x_range < playerPos.x + float(400):
-		if  y_range > playerPos.y - float(400) and y_range < playerPos.y + float(400):
+	if x_range > playerPos.x - float(100) and x_range < playerPos.x + 100:
+		if  y_range > playerPos.y - float(100) and y_range < playerPos.y + float(100):
 			return rand_coord()	
-
 	for i in EnemyList:
 		var enemyPos = i.global_position
-		if x_range > enemyPos.x - float(400) and x_range < enemyPos.x + float(400):
-			if  y_range > enemyPos.y - float(400) and y_range < enemyPos.y + float(400):
-				return rand_coord()
+		if x_range > enemyPos.x - float(100) and x_range < enemyPos.x + float(100):
+			if  y_range > enemyPos.y - float(100) and y_range < enemyPos.y + float(100):
+				return rand_coord()	
 	
 	return Vector2(x_range,y_range)
 
