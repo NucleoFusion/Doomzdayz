@@ -14,9 +14,9 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	if Lives <= 0:
-		#var n = randi_range(0,2)
-		#if n == 1:
-		_gameManager.spawn_powerup()
+		var n = randi_range(0,2)
+		if n == 1:
+			_gameManager.spawn_powerup()
 		queue_free()
 
 func _physics_process(delta: float) -> void:

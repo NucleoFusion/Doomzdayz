@@ -1,7 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://dld1mbxv4toef"]
+[gd_scene load_steps=8 format=3 uid="uid://dld1mbxv4toef"]
 
 [ext_resource type="Script" uid="uid://bb8wb40056qr" path="res://Boss/Kraken/kraken.gd" id="1_vkppg"]
 [ext_resource type="Texture2D" uid="uid://d2nhfms1n4jw5" path="res://Boss/Kraken/kraken.png" id="2_6d4po"]
+[ext_resource type="Script" uid="uid://dafwbsqt8blrt" path="res://Boss/Kraken/barrage.gd" id="3_6d4po"]
+[ext_resource type="PackedScene" uid="uid://cfo2ikvrgbxud" path="res://BulletScene/enemy_bullet.tscn" id="4_6sfi1"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6sfi1"]
 atlas = ExtResource("2_6d4po")
@@ -23,6 +25,8 @@ radius = 73.9997
 height = 204.005
 
 [node name="Kraken" type="CharacterBody2D"]
+collision_layer = 5
+collision_mask = 5
 script = ExtResource("1_vkppg")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -32,3 +36,27 @@ sprite_frames = SubResource("SpriteFrames_y343f")
 position = Vector2(1, 5)
 rotation = 1.57384
 shape = SubResource("CapsuleShape2D_vkppg")
+
+[node name="Barrage" type="Node2D" parent="."]
+script = ExtResource("3_6d4po")
+BulletScene = ExtResource("4_6sfi1")
+
+[node name="Marker2D" type="Marker2D" parent="Barrage"]
+position = Vector2(98, 54)
+
+[node name="Marker2D2" type="Marker2D" parent="Barrage"]
+position = Vector2(67, 87)
+
+[node name="Marker2D3" type="Marker2D" parent="Barrage"]
+position = Vector2(-1, 101)
+
+[node name="Marker2D4" type="Marker2D" parent="Barrage"]
+position = Vector2(-58, 88)
+
+[node name="Marker2D5" type="Marker2D" parent="Barrage"]
+position = Vector2(-102, 55)
+
+[node name="BarrageTimer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="BarrageTimer" to="." method="_on_barrage_timer_timeout"]

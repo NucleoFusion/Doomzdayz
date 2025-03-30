@@ -21,7 +21,7 @@ func _physics_process(delta: float) -> void:
 		
 		if node.is_in_group("enemies"):
 			_gameManager.add_score(node.Score)
-			node.queue_free()
+			node.Lives -= 1
 			queue_free()
 		
 		

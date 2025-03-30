@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://dpsc7d4wh67rg" path="res://WorldBorder/world_border.tscn" id="1_pq6x3"]
 [ext_resource type="PackedScene" uid="uid://d05vuqwjt7lxa" path="res://GameManager/game_manager.tscn" id="2_jrhsd"]
 [ext_resource type="PackedScene" uid="uid://bxn5qnge21woh" path="res://HUD/hud.tscn" id="5_wo00q"]
-[ext_resource type="PackedScene" uid="uid://yeo5mx6jptiu" path="res://Levels/Level0/level_0.tscn" id="6_5b1ro"]
+[ext_resource type="PackedScene" uid="uid://dsbejhtsrdvy1" path="res://Levels/BossLevel/boss_level.tscn" id="6_5b1ro"]
 [ext_resource type="Texture2D" uid="uid://bud2by61p65cf" path="res://MenuScene/assets/360_F_269284892_uHwDKiFqJ98GbFRCnR6iWBRdqg4mA0Tu.webp" id="8_oat8o"]
 
 [node name="GameScene" type="Node2D"]
@@ -26,4 +26,4 @@ position = Vector2(579, 328)
 
 [node name="HUD" parent="." instance=ExtResource("5_wo00q")]
 
-[node name="Level0" parent="." instance=ExtResource("6_5b1ro")]
+[node name="BossLevel" parent="." instance=ExtResource("6_5b1ro")]

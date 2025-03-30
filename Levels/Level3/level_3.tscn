@@ -1,9 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://c2bcicuaumr2h"]
+[gd_scene load_steps=3 format=3 uid="uid://c2bcicuaumr2h"]
 
 [ext_resource type="Script" uid="uid://bx3xqx2t1xr2n" path="res://Levels/Level3/level_3.gd" id="1_cb8d3"]
+[ext_resource type="PackedScene" uid="uid://bji8lb5u57e5u" path="res://Enemy/EnemyShooting/enemy_shooting.tscn" id="2_i3e1q"]
 
 [node name="Level3" type="Node2D"]
 script = ExtResource("1_cb8d3")
+EnemyShoot = ExtResource("2_i3e1q")
 
 [node name="SpawnTimer" type="Timer" parent="."]
 wait_time = 2.5
