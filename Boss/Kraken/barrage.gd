@@ -13,4 +13,4 @@ func barrage():
 		
 		get_tree().current_scene.get_node("GameScene").add_child(bullet)
 		
-		angle -= -30
+		angle += 30
