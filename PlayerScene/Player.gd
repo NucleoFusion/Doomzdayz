@@ -30,13 +30,14 @@ func _process(delta: float) -> void:
 	if _currAction == PlayerAction.SHIELDED:
 		print("Shielded")
 	if Lives <= 0:
+		_currAction = PlayerAction.DEAD
 		$AnimatedSprite2D.play("death")
 		
 
 func _physics_process(delta: float) -> void:
 	handleMovement()
 	rotation = _currAngle
-	if Input.is_action_pressed("shoot") && !_shotCooldown:
+	if Input.is_action_pressed("shoot") && !_shotCooldown && _currAction != PlayerAction.DEAD:
 		_shotCooldown = true
 		_shootTimer.start()
 		
@@ -46,6 +47,8 @@ func _physics_process(delta: float) -> void:
 
 func handleMovement():
 	velocity = Vector2.ZERO
+	if _currAction == PlayerAction.DEAD:
+		return
 
 	if Input.is_action_pressed("move_right"):
 		_currAngle += deg_to_rad(3)
@@ -113,6 +116,7 @@ func _on_shield_timer_timeout() -> void:
 	_currAction = PlayerAction.ALIVE
 	_shieldTimer.stop()
 	$AnimatedSprite2D.stop()
+	$AnimatedSprite2D.play("default")
 
 func _on_triple_timer_timeout() -> void:
 	isTripleShoot = false
